@@ -1593,11 +1593,11 @@ h6 {
 
 .main-slider .swiper-slide {
     position: relative;
-    background-color: var(--thm-black);
+    /*background-color: var(--thm-black);*/
 }
 
 .main-slider-three .swiper-slide {
-    background-color: rgba(0, 0, 0, 0);
+    /*background-color: rgba(0, 0, 0, 0);*/
 }
 
 .main-slider .swiper-slide .container {
@@ -1614,7 +1614,7 @@ h6 {
     background-repeat: no-repeat;
     background-size: cover;
     transform: scale(1);
-    filter: grayscale(100%);
+    /*filter: grayscale(100%);*/
     transition: transform 7000ms ease;
     z-index: 1;
 }
@@ -1626,7 +1626,7 @@ h6 {
     width: 100%;
     height: 100%;
     content: "";
-    background: rgba(var(--thm-black-rgb), .7);
+    /*background: rgba(var(--thm-black-rgb), .7);*/
     z-index: 2;
 }
 
@@ -1874,7 +1874,7 @@ h6 {
 }
 
 .main-slider-two .image-layer-overlay {
-    background: rgba(var(--thm-primary-rgb), 0.5);
+    /*background: rgba(var(--thm-primary-rgb), 0.5);*/
 }
 
 .main-slider-two .thm-btn {
@@ -1962,11 +1962,11 @@ h6 {
 }
 
 .main-slider-three .image-layer {
-    opacity: inherit;
+    /*opacity: inherit;*/
 }
 
 .main-slider-three .image-layer-overlay {
-    background: rgba(255, 255, 255, .30);
+    /*background: rgba(255, 255, 255, .30);*/
 }
 
 .main-slider-three p {

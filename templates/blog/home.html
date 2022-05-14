@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block container %}
 
 
@@ -6,9 +7,6 @@
     <div class="stricky-header stricked-menu main-menu">
         <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
     </div><!-- /.stricky-header -->
-
-
-
 
 
 
@@ -30,21 +28,22 @@
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
                     <div class="image-layer"
-                         style="background-image: url(assets/images/backgrounds/main-slider-1-1.jpg);">
+
+                         style="background-image: url('{% static "assets/images/shapes/joint_statement_project.jpeg" %}');">
                     </div>
-                    <div class="image-layer-overlay"></div>
+{#                    <div class="image-layer-overlay"></div>#}
                     <!-- /.image-layer -->
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-8">
                                 <div class="main-slider__content">
-                                    <p>Helping Them Today</p>
-                                    <h2>Help the Poor <br> in Need</h2>
-                                    <a href="#" class="thm-btn"><i class="fas fa-arrow-circle-right"></i>Learn
-                                        More</a>
-                                    <div class="main-slider__shape-1 zoom-fade">
-                                        <img src="assets/images/shapes/main-slider-1-shape-1.png" alt="">
-                                    </div>
+                                    <p>Our Goal</p>
+{#                                    <h2>Help the Poor <br> in Need</h2>#}
+{#                                    <a href="#" class="thm-btn"><i class="fas fa-arrow-circle-right"></i>Learn#}
+{#                                        More</a>#}
+{#                                    <div class="main-slider__shape-1 zoom-fade">#}
+{#                                        <img src="{% static 'assets/images/shapes/joint_statement_project.jpeg' %}" alt="">#}
+{#                                    </div>#}
                                 </div>
                             </div>
                         </div>
@@ -186,307 +185,307 @@
     </section>
     <!--Welcome One End-->
 
-    <!--Causes One Start-->
-    <section class="causes-one">
-        <div class="container">
-            <div class="section-title text-center">
-                <span class="section-title__tagline">Latest Causes</span>
-                <h2 class="section-title__title">Find the popular cause <br> and donate them</h2>
-            </div>
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="causes-one__carousel owl-theme owl-carousel">
-                        <div class="causes-one__single wow fadeInLeft" data-wow-duration="1500ms">
-                            <div class="causes-one__img">
-                                <div class="causes-one__img-box">
-                                    <img src="assets/images/resources/causes-one-img-1.jpg" alt="">
-                                    <a href="#">
-                                        <i class="fa fa-plus"></i>
-                                    </a>
-                                </div>
-                                <div class="causes-one__category">
-                                    <span>Medical</span>
-                                </div>
-                            </div>
-                            <div class="causes-one__content">
-                                <h3 class="causes-one__title">
-                                    <a href="causes-details.html">Raise Fund for Clean & Healthy Water</a>
-                                </h3>
-                                <p class="causes-one__text">There are not many of passages of lorem ipsum avail isn
-                                    alteration donationa in form simply free.</p>
-                            </div>
-                            <div class="causes-one__progress">
-                                <div class="bar">
-                                    <div class="bar-inner count-bar" data-percent="36%">
-                                        <div class="count-text">36%</div>
-                                    </div>
-                                </div>
-                                <div class="causes-one__goals">
-                                    <p><span>$25,270</span> Raised</p>
-                                    <p><span>$30,000</span> Goal</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="causes-one__single wow fadeInUp" data-wow-duration="1500ms"
-                             data-wow-delay="100ms">
-                            <div class="causes-one__img">
-                                <div class="causes-one__img-box">
-                                    <img src="assets/images/resources/causes-one-img-2.jpg" alt="">
-                                    <a href="#">
-                                        <i class="fa fa-plus"></i>
-                                    </a>
-                                </div>
-                                <div class="causes-one__category">
-                                    <span>Medical</span>
-                                </div>
-                            </div>
-                            <div class="causes-one__content">
-                                <h3 class="causes-one__title">
-                                    <a href="causes-details.html">School Counseling for Children</a>
-                                </h3>
-                                <p class="causes-one__text">There are not many of passages of lorem ipsum avail isn
-                                    alteration donationa in form simply free.</p>
-                            </div>
-                            <div class="causes-one__progress">
-                                <div class="bar">
-                                    <div class="bar-inner count-bar" data-percent="36%">
-                                        <div class="count-text">36%</div>
-                                    </div>
-                                </div>
-                                <div class="causes-one__goals">
-                                    <p><span>$25,270</span> Raised</p>
-                                    <p><span>$30,000</span> Goal</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="causes-one__single wow fadeInRight" data-wow-duration="1500ms"
-                             data-wow-delay="200ms">
-                            <div class="causes-one__img">
-                                <div class="causes-one__img-box">
-                                    <img src="assets/images/resources/causes-one-img-3.jpg" alt="">
-                                    <a href="#">
-                                        <i class="fa fa-plus"></i>
-                                    </a>
-                                </div>
-                                <div class="causes-one__category">
-                                    <span>Medical</span>
-                                </div>
-                            </div>
-                            <div class="causes-one__content">
-                                <h3 class="causes-one__title">
-                                    <a href="causes-details.html">Fundrising for Early Childhood Rise</a>
-                                </h3>
-                                <p class="causes-one__text">There are not many of passages of lorem ipsum avail isn
-                                    alteration donationa in form simply free.</p>
-                            </div>
-                            <div class="causes-one__progress">
-                                <div class="bar">
-                                    <div class="bar-inner count-bar" data-percent="36%">
-                                        <div class="count-text">36%</div>
-                                    </div>
-                                </div>
-                                <div class="causes-one__goals">
-                                    <p><span>$25,270</span> Raised</p>
-                                    <p><span>$30,000</span> Goal</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="causes-one__single wow fadeInLeft" data-wow-duration="1500ms">
-                            <div class="causes-one__img">
-                                <div class="causes-one__img-box">
-                                    <img src="assets/images/resources/causes-one-img-1.jpg" alt="">
-                                    <a href="#">
-                                        <i class="fa fa-plus"></i>
-                                    </a>
-                                </div>
-                                <div class="causes-one__category">
-                                    <span>Medical</span>
-                                </div>
-                            </div>
-                            <div class="causes-one__content">
-                                <h3 class="causes-one__title">
-                                    <a href="causes-details.html">Promoting The Rights of Children</a>
-                                </h3>
-                                <p class="causes-one__text">There are not many of passages of lorem ipsum avail isn
-                                    alteration donationa in form simply free.</p>
-                            </div>
-                            <div class="causes-one__progress">
-                                <div class="bar">
-                                    <div class="bar-inner count-bar" data-percent="36%">
-                                        <div class="count-text">36%</div>
-                                    </div>
-                                </div>
-                                <div class="causes-one__goals">
-                                    <p><span>$25,270</span> Raised</p>
-                                    <p><span>$30,000</span> Goal</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="causes-one__single wow fadeInUp" data-wow-duration="1500ms"
-                             data-wow-delay="100ms">
-                            <div class="causes-one__img">
-                                <div class="causes-one__img-box">
-                                    <img src="assets/images/resources/causes-one-img-2.jpg" alt="">
-                                    <a href="#">
-                                        <i class="fa fa-plus"></i>
-                                    </a>
-                                </div>
-                                <div class="causes-one__category">
-                                    <span>Medical</span>
-                                </div>
-                            </div>
-                            <div class="causes-one__content">
-                                <h3 class="causes-one__title">
-                                    <a href="causes-details.html">Education for Poor Children</a>
-                                </h3>
-                                <p class="causes-one__text">There are not many of passages of lorem ipsum avail isn
-                                    alteration donationa in form simply free.</p>
-                            </div>
-                            <div class="causes-one__progress">
-                                <div class="bar">
-                                    <div class="bar-inner count-bar" data-percent="36%">
-                                        <div class="count-text">36%</div>
-                                    </div>
-                                </div>
-                                <div class="causes-one__goals">
-                                    <p><span>$25,270</span> Raised</p>
-                                    <p><span>$30,000</span> Goal</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="causes-one__single wow fadeInRight" data-wow-duration="1500ms"
-                             data-wow-delay="200ms">
-                            <div class="causes-one__img">
-                                <div class="causes-one__img-box">
-                                    <img src="assets/images/resources/causes-one-img-3.jpg" alt="">
-                                    <a href="#">
-                                        <i class="fa fa-plus"></i>
-                                    </a>
-                                </div>
-                                <div class="causes-one__category">
-                                    <span>Medical</span>
-                                </div>
-                            </div>
-                            <div class="causes-one__content">
-                                <h3 class="causes-one__title">
-                                    <a href="causes-details.html">Raise Fund for Clean & Healthy Water</a>
-                                </h3>
-                                <p class="causes-one__text">There are not many of passages of lorem ipsum avail isn
-                                    alteration donationa in form simply free.</p>
-                            </div>
-                            <div class="causes-one__progress">
-                                <div class="bar">
-                                    <div class="bar-inner count-bar" data-percent="36%">
-                                        <div class="count-text">36%</div>
-                                    </div>
-                                </div>
-                                <div class="causes-one__goals">
-                                    <p><span>$25,270</span> Raised</p>
-                                    <p><span>$30,000</span> Goal</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="causes-one__single wow fadeInLeft" data-wow-duration="1500ms">
-                            <div class="causes-one__img">
-                                <div class="causes-one__img-box">
-                                    <img src="assets/images/resources/causes-one-img-1.jpg" alt="">
-                                    <a href="#">
-                                        <i class="fa fa-plus"></i>
-                                    </a>
-                                </div>
-                                <div class="causes-one__category">
-                                    <span>Medical</span>
-                                </div>
-                            </div>
-                            <div class="causes-one__content">
-                                <h3 class="causes-one__title">
-                                    <a href="causes-details.html">Raise Fund for Clean & Healthy Water</a>
-                                </h3>
-                                <p class="causes-one__text">There are not many of passages of lorem ipsum avail isn
-                                    alteration donationa in form simply free.</p>
-                            </div>
-                            <div class="causes-one__progress">
-                                <div class="bar">
-                                    <div class="bar-inner count-bar" data-percent="36%">
-                                        <div class="count-text">36%</div>
-                                    </div>
-                                </div>
-                                <div class="causes-one__goals">
-                                    <p><span>$25,270</span> Raised</p>
-                                    <p><span>$30,000</span> Goal</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="causes-one__single wow fadeInUp" data-wow-duration="1500ms"
-                             data-wow-delay="100ms">
-                            <div class="causes-one__img">
-                                <div class="causes-one__img-box">
-                                    <img src="assets/images/resources/causes-one-img-2.jpg" alt="">
-                                    <a href="#">
-                                        <i class="fa fa-plus"></i>
-                                    </a>
-                                </div>
-                                <div class="causes-one__category">
-                                    <span>Medical</span>
-                                </div>
-                            </div>
-                            <div class="causes-one__content">
-                                <h3 class="causes-one__title">
-                                    <a href="causes-details.html">Raise Fund for Clean & Healthy Water</a>
-                                </h3>
-                                <p class="causes-one__text">There are not many of passages of lorem ipsum avail isn
-                                    alteration donationa in form simply free.</p>
-                            </div>
-                            <div class="causes-one__progress">
-                                <div class="bar">
-                                    <div class="bar-inner count-bar" data-percent="36%">
-                                        <div class="count-text">36%</div>
-                                    </div>
-                                </div>
-                                <div class="causes-one__goals">
-                                    <p><span>$25,270</span> Raised</p>
-                                    <p><span>$30,000</span> Goal</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="causes-one__single fadeInRight" data-wow-duration="1500ms"
-                             data-wow-delay="200ms">
-                            <div class="causes-one__img">
-                                <div class="causes-one__img-box">
-                                    <img src="assets/images/resources/causes-one-img-3.jpg" alt="">
-                                    <a href="#">
-                                        <i class="fa fa-plus"></i>
-                                    </a>
-                                </div>
-                                <div class="causes-one__category">
-                                    <span>Medical</span>
-                                </div>
-                            </div>
-                            <div class="causes-one__content">
-                                <h3 class="causes-one__title">
-                                    <a href="causes-details.html">Raise Fund for Clean & Healthy Water</a>
-                                </h3>
-                                <p class="causes-one__text">There are not many of passages of lorem ipsum avail isn
-                                    alteration donationa in form simply free.</p>
-                            </div>
-                            <div class="causes-one__progress">
-                                <div class="bar">
-                                    <div class="bar-inner count-bar" data-percent="36%">
-                                        <div class="count-text">36%</div>
-                                    </div>
-                                </div>
-                                <div class="causes-one__goals">
-                                    <p><span>$25,270</span> Raised</p>
-                                    <p><span>$30,000</span> Goal</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--Causes One End-->
+{#    <!--Causes One Start-->#}
+{#    <section class="causes-one">#}
+{#        <div class="container">#}
+{#            <div class="section-title text-center">#}
+{#                <span class="section-title__tagline">Latest Causes</span>#}
+{#                <h2 class="section-title__title">Find the popular cause <br> and donate them</h2>#}
+{#            </div>#}
+{#            <div class="row">#}
+{#                <div class="col-xl-12">#}
+{#                    <div class="causes-one__carousel owl-theme owl-carousel">#}
+{#                        <div class="causes-one__single wow fadeInLeft" data-wow-duration="1500ms">#}
+{#                            <div class="causes-one__img">#}
+{#                                <div class="causes-one__img-box">#}
+{#                                    <img src="assets/images/resources/causes-one-img-1.jpg" alt="">#}
+{#                                    <a href="#">#}
+{#                                        <i class="fa fa-plus"></i>#}
+{#                                    </a>#}
+{#                                </div>#}
+{#                                <div class="causes-one__category">#}
+{#                                    <span>Medical</span>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <div class="causes-one__content">#}
+{#                                <h3 class="causes-one__title">#}
+{#                                    <a href="causes-details.html">Raise Fund for Clean & Healthy Water</a>#}
+{#                                </h3>#}
+{#                                <p class="causes-one__text">There are not many of passages of lorem ipsum avail isn#}
+{#                                    alteration donationa in form simply free.</p>#}
+{#                            </div>#}
+{#                            <div class="causes-one__progress">#}
+{#                                <div class="bar">#}
+{#                                    <div class="bar-inner count-bar" data-percent="36%">#}
+{#                                        <div class="count-text">36%</div>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                                <div class="causes-one__goals">#}
+{#                                    <p><span>$25,270</span> Raised</p>#}
+{#                                    <p><span>$30,000</span> Goal</p>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div class="causes-one__single wow fadeInUp" data-wow-duration="1500ms"#}
+{#                             data-wow-delay="100ms">#}
+{#                            <div class="causes-one__img">#}
+{#                                <div class="causes-one__img-box">#}
+{#                                    <img src="assets/images/resources/causes-one-img-2.jpg" alt="">#}
+{#                                    <a href="#">#}
+{#                                        <i class="fa fa-plus"></i>#}
+{#                                    </a>#}
+{#                                </div>#}
+{#                                <div class="causes-one__category">#}
+{#                                    <span>Medical</span>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <div class="causes-one__content">#}
+{#                                <h3 class="causes-one__title">#}
+{#                                    <a href="causes-details.html">School Counseling for Children</a>#}
+{#                                </h3>#}
+{#                                <p class="causes-one__text">There are not many of passages of lorem ipsum avail isn#}
+{#                                    alteration donationa in form simply free.</p>#}
+{#                            </div>#}
+{#                            <div class="causes-one__progress">#}
+{#                                <div class="bar">#}
+{#                                    <div class="bar-inner count-bar" data-percent="36%">#}
+{#                                        <div class="count-text">36%</div>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                                <div class="causes-one__goals">#}
+{#                                    <p><span>$25,270</span> Raised</p>#}
+{#                                    <p><span>$30,000</span> Goal</p>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div class="causes-one__single wow fadeInRight" data-wow-duration="1500ms"#}
+{#                             data-wow-delay="200ms">#}
+{#                            <div class="causes-one__img">#}
+{#                                <div class="causes-one__img-box">#}
+{#                                    <img src="assets/images/resources/causes-one-img-3.jpg" alt="">#}
+{#                                    <a href="#">#}
+{#                                        <i class="fa fa-plus"></i>#}
+{#                                    </a>#}
+{#                                </div>#}
+{#                                <div class="causes-one__category">#}
+{#                                    <span>Medical</span>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <div class="causes-one__content">#}
+{#                                <h3 class="causes-one__title">#}
+{#                                    <a href="causes-details.html">Fundrising for Early Childhood Rise</a>#}
+{#                                </h3>#}
+{#                                <p class="causes-one__text">There are not many of passages of lorem ipsum avail isn#}
+{#                                    alteration donationa in form simply free.</p>#}
+{#                            </div>#}
+{#                            <div class="causes-one__progress">#}
+{#                                <div class="bar">#}
+{#                                    <div class="bar-inner count-bar" data-percent="36%">#}
+{#                                        <div class="count-text">36%</div>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                                <div class="causes-one__goals">#}
+{#                                    <p><span>$25,270</span> Raised</p>#}
+{#                                    <p><span>$30,000</span> Goal</p>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div class="causes-one__single wow fadeInLeft" data-wow-duration="1500ms">#}
+{#                            <div class="causes-one__img">#}
+{#                                <div class="causes-one__img-box">#}
+{#                                    <img src="assets/images/resources/causes-one-img-1.jpg" alt="">#}
+{#                                    <a href="#">#}
+{#                                        <i class="fa fa-plus"></i>#}
+{#                                    </a>#}
+{#                                </div>#}
+{#                                <div class="causes-one__category">#}
+{#                                    <span>Medical</span>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <div class="causes-one__content">#}
+{#                                <h3 class="causes-one__title">#}
+{#                                    <a href="causes-details.html">Promoting The Rights of Children</a>#}
+{#                                </h3>#}
+{#                                <p class="causes-one__text">There are not many of passages of lorem ipsum avail isn#}
+{#                                    alteration donationa in form simply free.</p>#}
+{#                            </div>#}
+{#                            <div class="causes-one__progress">#}
+{#                                <div class="bar">#}
+{#                                    <div class="bar-inner count-bar" data-percent="36%">#}
+{#                                        <div class="count-text">36%</div>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                                <div class="causes-one__goals">#}
+{#                                    <p><span>$25,270</span> Raised</p>#}
+{#                                    <p><span>$30,000</span> Goal</p>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div class="causes-one__single wow fadeInUp" data-wow-duration="1500ms"#}
+{#                             data-wow-delay="100ms">#}
+{#                            <div class="causes-one__img">#}
+{#                                <div class="causes-one__img-box">#}
+{#                                    <img src="assets/images/resources/causes-one-img-2.jpg" alt="">#}
+{#                                    <a href="#">#}
+{#                                        <i class="fa fa-plus"></i>#}
+{#                                    </a>#}
+{#                                </div>#}
+{#                                <div class="causes-one__category">#}
+{#                                    <span>Medical</span>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <div class="causes-one__content">#}
+{#                                <h3 class="causes-one__title">#}
+{#                                    <a href="causes-details.html">Education for Poor Children</a>#}
+{#                                </h3>#}
+{#                                <p class="causes-one__text">There are not many of passages of lorem ipsum avail isn#}
+{#                                    alteration donationa in form simply free.</p>#}
+{#                            </div>#}
+{#                            <div class="causes-one__progress">#}
+{#                                <div class="bar">#}
+{#                                    <div class="bar-inner count-bar" data-percent="36%">#}
+{#                                        <div class="count-text">36%</div>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                                <div class="causes-one__goals">#}
+{#                                    <p><span>$25,270</span> Raised</p>#}
+{#                                    <p><span>$30,000</span> Goal</p>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div class="causes-one__single wow fadeInRight" data-wow-duration="1500ms"#}
+{#                             data-wow-delay="200ms">#}
+{#                            <div class="causes-one__img">#}
+{#                                <div class="causes-one__img-box">#}
+{#                                    <img src="assets/images/resources/causes-one-img-3.jpg" alt="">#}
+{#                                    <a href="#">#}
+{#                                        <i class="fa fa-plus"></i>#}
+{#                                    </a>#}
+{#                                </div>#}
+{#                                <div class="causes-one__category">#}
+{#                                    <span>Medical</span>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <div class="causes-one__content">#}
+{#                                <h3 class="causes-one__title">#}
+{#                                    <a href="causes-details.html">Raise Fund for Clean & Healthy Water</a>#}
+{#                                </h3>#}
+{#                                <p class="causes-one__text">There are not many of passages of lorem ipsum avail isn#}
+{#                                    alteration donationa in form simply free.</p>#}
+{#                            </div>#}
+{#                            <div class="causes-one__progress">#}
+{#                                <div class="bar">#}
+{#                                    <div class="bar-inner count-bar" data-percent="36%">#}
+{#                                        <div class="count-text">36%</div>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                                <div class="causes-one__goals">#}
+{#                                    <p><span>$25,270</span> Raised</p>#}
+{#                                    <p><span>$30,000</span> Goal</p>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div class="causes-one__single wow fadeInLeft" data-wow-duration="1500ms">#}
+{#                            <div class="causes-one__img">#}
+{#                                <div class="causes-one__img-box">#}
+{#                                    <img src="assets/images/resources/causes-one-img-1.jpg" alt="">#}
+{#                                    <a href="#">#}
+{#                                        <i class="fa fa-plus"></i>#}
+{#                                    </a>#}
+{#                                </div>#}
+{#                                <div class="causes-one__category">#}
+{#                                    <span>Medical</span>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <div class="causes-one__content">#}
+{#                                <h3 class="causes-one__title">#}
+{#                                    <a href="causes-details.html">Raise Fund for Clean & Healthy Water</a>#}
+{#                                </h3>#}
+{#                                <p class="causes-one__text">There are not many of passages of lorem ipsum avail isn#}
+{#                                    alteration donationa in form simply free.</p>#}
+{#                            </div>#}
+{#                            <div class="causes-one__progress">#}
+{#                                <div class="bar">#}
+{#                                    <div class="bar-inner count-bar" data-percent="36%">#}
+{#                                        <div class="count-text">36%</div>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                                <div class="causes-one__goals">#}
+{#                                    <p><span>$25,270</span> Raised</p>#}
+{#                                    <p><span>$30,000</span> Goal</p>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div class="causes-one__single wow fadeInUp" data-wow-duration="1500ms"#}
+{#                             data-wow-delay="100ms">#}
+{#                            <div class="causes-one__img">#}
+{#                                <div class="causes-one__img-box">#}
+{#                                    <img src="assets/images/resources/causes-one-img-2.jpg" alt="">#}
+{#                                    <a href="#">#}
+{#                                        <i class="fa fa-plus"></i>#}
+{#                                    </a>#}
+{#                                </div>#}
+{#                                <div class="causes-one__category">#}
+{#                                    <span>Medical</span>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <div class="causes-one__content">#}
+{#                                <h3 class="causes-one__title">#}
+{#                                    <a href="causes-details.html">Raise Fund for Clean & Healthy Water</a>#}
+{#                                </h3>#}
+{#                                <p class="causes-one__text">There are not many of passages of lorem ipsum avail isn#}
+{#                                    alteration donationa in form simply free.</p>#}
+{#                            </div>#}
+{#                            <div class="causes-one__progress">#}
+{#                                <div class="bar">#}
+{#                                    <div class="bar-inner count-bar" data-percent="36%">#}
+{#                                        <div class="count-text">36%</div>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                                <div class="causes-one__goals">#}
+{#                                    <p><span>$25,270</span> Raised</p>#}
+{#                                    <p><span>$30,000</span> Goal</p>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div class="causes-one__single fadeInRight" data-wow-duration="1500ms"#}
+{#                             data-wow-delay="200ms">#}
+{#                            <div class="causes-one__img">#}
+{#                                <div class="causes-one__img-box">#}
+{#                                    <img src="assets/images/resources/causes-one-img-3.jpg" alt="">#}
+{#                                    <a href="#">#}
+{#                                        <i class="fa fa-plus"></i>#}
+{#                                    </a>#}
+{#                                </div>#}
+{#                                <div class="causes-one__category">#}
+{#                                    <span>Medical</span>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <div class="causes-one__content">#}
+{#                                <h3 class="causes-one__title">#}
+{#                                    <a href="causes-details.html">Raise Fund for Clean & Healthy Water</a>#}
+{#                                </h3>#}
+{#                                <p class="causes-one__text">There are not many of passages of lorem ipsum avail isn#}
+{#                                    alteration donationa in form simply free.</p>#}
+{#                            </div>#}
+{#                            <div class="causes-one__progress">#}
+{#                                <div class="bar">#}
+{#                                    <div class="bar-inner count-bar" data-percent="36%">#}
+{#                                        <div class="count-text">36%</div>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                                <div class="causes-one__goals">#}
+{#                                    <p><span>$25,270</span> Raised</p>#}
+{#                                    <p><span>$30,000</span> Goal</p>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        </div>#}
+{#    </section>#}
+{#    <!--Causes One End-->#}
 
     <!--Join One Start-->
     <section class="join-one">
@@ -1019,159 +1018,13 @@
     </section>
     <!--Brand One End-->
 
-    <!--Site Footer One Start-->
-    <footer class="site-footer">
-        <div class="site-footer-bg" style="background-image: url(assets/images/backgrounds/footer-bg.jpg)"></div>
-        <div class="container">
-            <div class="site-footer__top">
-                <div class="row">
-                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
-                        <div class="footer-widget__column footer-widget__about">
-                            <h3 class="footer-widget__title">About</h3>
-                            <p class="footer-widget__text">Lorem ipsum dolor sit ame consect etur pisicing elit sed
-                                do eiusmod tempor incididunt ut labore.</p>
-                            <a href="#" class="footer-widget__about-btn"><i class="fa fa-heart"></i>Donate </a>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
-                        <div class="footer-widget__column footer-widget__explore clearfix">
-                            <h3 class="footer-widget__title">Explore</h3>
-                            <ul class="footer-widget__explore-list list-unstyled">
-                                <li><a href="#">Donate</a></li>
-                                <li><a href="#">Campaigns</a></li>
-                                <li><a href="#">Fundraise</a></li>
-                                <li><a href="#">Volunteers</a></li>
-                                <li><a href="#">Sponsors</a></li>
-                            </ul>
-                            <ul class="footer-widget__explore-list footer-widget__explore-list-two list-unstyled">
-                                <li><a href="#">Fundraising</a></li>
-                                <li><a href="#">Contact</a></li>
-                                <li><a href="#">Help</a></li>
-                                <li><a href="#">Faqs</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
-                        <div class="footer-widget__column footer-widget__contact">
-                            <h3 class="footer-widget__title">Contact</h3>
-                            <ul class="list-unstyled footer-widget__contact-list">
-                                <li>
-                                    <div class="icon">
-                                        <i class="icon-chat"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>
-                                            <span>Call Anytime</span>
-                                            <a href="tel:92 666 888 0000">92 666 888 0000</a>
-                                        </p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <i class="icon-message"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p>
-                                            <span>Send Email</span>
-                                            <a href="mailto:needhelp@company.com">needhelp@company.com</a>
-                                        </p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <i class="icon-address"></i>
-                                    </div>
-                                    <div class="text">
-                                        <p><span>Visit Office</span>80 broklyn golden street</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
-                        <div class="footer-widget__column footer-widget__newsletter">
-                            <h3 class="footer-widget__title">Newsletter</h3>
-                            <p class="footer-widget__newsletter-text">Lorem ipsum dolor sit ame consect etur
-                                pisicing elit sed do.</p>
-                            <form class="footer-widget__newsletter-form">
-                                <input type="email" placeholder="Email address" name="email">
-                                <button type="submit" class="footer-widget__newsletter-btn"><i
-                                        class="fas fa-arrow-circle-right"></i>Send
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="site-footer__bottom">
-                <div class="row">
-                    <div class="col-xl-12">
-                        <div class="site-footer__bottom-inner">
-                            <div class="site-footer__bottom-logo-social">
-                                <div class="site-footer__bottom-logo">
-                                    <a href="index.html"><img src="assets/images/resources/footer-logo.jpg"
-                                                              alt=""></a>
-                                </div>
-                                <div class="site-footer__bottom-social">
-                                    <a href="#"><i class="fab fa-twitter"></i></a>
-                                    <a href="#"><i class="fab fa-facebook-square"></i></a>
-                                    <a href="#"><i class="fab fa-instagram"></i></a>
-                                </div>
-                            </div>
-                            <div class="site-footer__bottom-copy-right">
-                                <p>© Religion for Peace Bangladesh
-                                    <script>document.write(Date().split(' ')[3])</script>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <!--Site Footer One End-->
+
 
 
     </div><!-- /.page-wrapper -->
 
 
-    <div class="mobile-nav__wrapper">
-        <div class="mobile-nav__overlay mobile-nav__toggler"></div>
-        <!-- /.mobile-nav__overlay -->
-        <div class="mobile-nav__content">
-            <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
 
-            <div class="logo-box">
-                <a href="index.html" aria-label="logo image"><img src="assets/images/resources/logo-1.png" width="155"
-                                                                  alt=""/></a>
-            </div>
-            <!-- /.logo-box -->
-            <div class="mobile-nav__container"></div>
-            <!-- /.mobile-nav__container -->
-
-            <ul class="mobile-nav__contact list-unstyled">
-                <li>
-                    <i class="fa fa-envelope"></i>
-                    <a href="mailto:needhelp@packageName__.com">needhelp@halpes.com</a>
-                </li>
-                <li>
-                    <i class="fa fa-phone-alt"></i>
-                    <a href="tel:666-888-0000">666 888 0000</a>
-                </li>
-            </ul><!-- /.mobile-nav__contact -->
-            <div class="mobile-nav__top">
-                <div class="mobile-nav__social">
-                    <a href="#" class="fab fa-twitter"></a>
-                    <a href="#" class="fab fa-facebook-square"></a>
-                    <a href="#" class="fab fa-instagram"></a>
-                </div><!-- /.mobile-nav__social -->
-            </div><!-- /.mobile-nav__top -->
-
-
-        </div>
-        <!-- /.mobile-nav__content -->
-    </div>
-    <!-- /.mobile-nav__wrapper -->
 
     <div class="search-popup">
         <div class="search-popup__overlay search-toggler"></div>
@@ -1189,6 +1042,8 @@
     </div>
     <!-- /.search-popup -->
 
-    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
+    {#    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>#}
+    {#    #}
+    {#    #}
     </div>
 {% endblock %}
