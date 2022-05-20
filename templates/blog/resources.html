@@ -1,10 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load static %}
+{% block container %}
+    <div class="stricky-header stricked-menu main-menu">
+            <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
+        </div><!-- /.stricky-header -->
 
-</body>
-</html>
+      <!--Page Header Start-->
+       <section class="page-header">
+            <div class="page-header__bg" style="background-image: url(assets/images/backgrounds/page-header-bg-1-1.jpg);"></div>
+            <!-- /.page-header__bg -->
+            <div class="container">
+                <h2>Resources</h2>
+                <ul class="thm-breadcrumb list-unstyled">
+                    <li><a href="/">Home</a></li>
+                    <li class="color-thm-gray">/</li>
+                    <li><span>Resources</span></li>
+                </ul>
+            </div>
+        </section>
+    <embed src="https://drive.google.com/file/d/1pB3imZPCi5YrplWBX7R9y3L661V601KG/preview" width="640" height="480" allow="autoplay">
+{% endblock %}
