@@ -18,5 +18,9 @@
                 </ul>
             </div>
         </section>
-    <embed src="https://drive.google.com/file/d/1pB3imZPCi5YrplWBX7R9y3L661V601KG/preview" width="640" height="480" allow="autoplay">
+    {%  for report in resources %}
+
+        <h4>{{ report.rp_title }}</h4>
+    <embed src="{{ report.url }}" width='50%' height='100%' allow="autoplay">
+{% endfor %}
 {% endblock %}

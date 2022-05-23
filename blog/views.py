@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.views.generic import ListView, DetailView
-from .models import Post, Reports
+from .models import Post, Report
 
 
 class Home(ListView):
@@ -11,8 +11,9 @@ class Home(ListView):
     template_name = 'blog/home.html'
 
 
-class Reports(ListView):
-    model = Reports
+class Report(ListView):
+    model = Report
+    report_list = Report.objects.all()
     context_object_name = 'resources'
     template_name = 'blog/resources.html'
 
