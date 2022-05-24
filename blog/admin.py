@@ -25,6 +25,7 @@ class ReportAdmin(admin.ModelAdmin):
     list_display = ('rp_title', 'url', 'date')
     list_filter = ('rp_title', 'date')
     search_fields = ('rp_title', 'body')
+    prepopulated_fields = {'rp_slug': ('rp_title',)}
     # prepopulated_fields = {'slug': ('title',)}
     # raw_id_fields = ('author',)
     # date_hierarchy = 'publish'

@@ -11,11 +11,17 @@ class Home(ListView):
     template_name = 'blog/home.html'
 
 
-class Report(ListView):
+class ReportListView(ListView):
     model = Report
-    report_list = Report.objects.all()
-    context_object_name = 'resources'
-    template_name = 'blog/resources.html'
+    context_object_name = 'reports'
+    template_name = 'blog/report_list.html'
+
+
+class ReportDetailView(DetailView):
+    model = Report
+    slug_field = 'report_slug'
+    context_object_name = 'report'
+    template_name = 'blog/report_detail.html'
 
 
 class Contact(ListView):

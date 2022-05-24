@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block container %}
+    <div class="stricky-header stricked-menu main-menu">
+        <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
+    </div><!-- /.stricky-header -->
+
+    <!--Page Header Start-->
+    <section class="page-header">
+        <div class="page-header__bg"
+             style="background-image: url('{% static "assets/images/backgrounds/page-header-bg-1-1.jpg" %}')"></div>
+        <!-- /.page-header__bg -->
+        <div class="container">
+            <h2>Resources</h2>
+            <ul class="thm-breadcrumb list-unstyled">
+                <li><a href="/">Home</a></li>
+                <li class="color-thm-gray">/</li>
+                <li><span>Resources</span></li>
+            </ul>
+        </div>
+    </section>
+
+
+    <section class="reports-page">
+        <div class="container">
+            {% for report in reports %}
+                <div class="col-xl-4 col-lg-6 col-md-6">
+                    <ul class="list-styled">
+                        <li><a href="{{ report.get_absolute_url }}"><h3 class="reports-title">{{ report.rp_title }}</h3></a>
+                            </li>
+                    </ul>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+    {#    <embed src="{{ report.url }}" width='50%' height='100%' allow="autoplay">#}
+
+{% endblock %}

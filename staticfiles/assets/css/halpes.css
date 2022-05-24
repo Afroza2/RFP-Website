@@ -6833,6 +6833,189 @@ h6 {
     border: none;
 }
 
+
+/*--------------------------------------------------------------
+## Report Page
+--------------------------------------------------------------*/
+.reports-page {
+    position: relative;
+    display: block;
+    padding: 10px 0 70px;
+}
+
+.reports-page  {
+    margin-bottom: 30px;
+}
+
+.reports-page  .reports-title {
+    font-size: 20px;
+}
+
+.reports-page {
+    line-height: 25px;
+}
+
+/*!*--------------------------------------------------------------*/
+/*## Events Details*/
+/*--------------------------------------------------------------*!*/
+/*.event-details {*/
+/*    position: relative;*/
+/*    display: block;*/
+/*    padding: 100px 0 100px;*/
+/*}*/
+
+/*.events-details__img {*/
+/*    position: relative;*/
+/*    display: block;*/
+/*}*/
+
+/*.events-details__img img {*/
+/*    width: 100%;*/
+/*}*/
+
+/*.event-details__date-box {*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    left: 30px;*/
+/*    background: var(--thm-primary);*/
+/*    height: 70px;*/
+/*    width: 67px;*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: center;*/
+/*}*/
+
+/*.event-details__date-box p {*/
+/*    font-size: 16px;*/
+/*    color: #ffffff;*/
+/*    font-weight: 800;*/
+/*    margin: 0;*/
+/*    line-height: 20px;*/
+/*}*/
+
+
+
+/*.event-details__top-content {*/
+/*    position: relative;*/
+/*    display: block;*/
+/*    margin-top: 39px;*/
+/*}*/
+
+/*.event-details__title {*/
+/*    font-size: 36px;*/
+/*    font-weight: 900;*/
+/*    line-height: 46px;*/
+/*    margin-bottom: 9px;*/
+/*}*/
+
+/*.event-details__text-1 {*/
+/*    font-size: 16px;*/
+/*    padding-bottom: 15px;*/
+/*}*/
+
+/*.event-details__text-2 {*/
+/*    font-size: 16px;*/
+/*    margin: 0;*/
+/*}*/
+
+/*.event-details__bottom-content {*/
+/*    padding-top: 32px;*/
+/*}*/
+
+/*.event-details__bottom-title {*/
+/*    font-size: 26px;*/
+/*    font-weight: 900;*/
+/*    line-height: 36px;*/
+/*    margin-bottom: 11px;*/
+/*}*/
+
+/*.event-details__bottom-text-1 {*/
+/*    font-size: 16px;*/
+/*    padding-bottom: 15px;*/
+/*}*/
+
+/*.event-details__bottom-text-2 {*/
+/*    font-size: 16px;*/
+/*    margin: 0;*/
+/*}*/
+
+/*.event-details__bottom-content-btn {*/
+/*    margin-top: 40px;*/
+/*}*/
+
+/*.event-details__right {*/
+/*    position: relative;*/
+/*    display: block;*/
+/*    margin-top: 60px;*/
+/*}*/
+
+/*.event-details__right-sidebar {*/
+/*    position: relative;*/
+/*    display: block;*/
+/*    background: #eff5f4;*/
+/*    padding: 30px 30px 26px;*/
+/*}*/
+
+/*.event-details__right-sidebar-title {*/
+/*    position: relative;*/
+/*    display: block;*/
+/*    background: #ffffff;*/
+/*    text-align: center;*/
+/*    padding: 13px 0;*/
+/*    margin-bottom: 19px;*/
+/*}*/
+
+/*.event-details__right-sidebar-title h4 {*/
+/*    font-size: 18px;*/
+/*    font-weight: 900;*/
+/*    line-height: 28px;*/
+/*}*/
+
+/*.event-details__right-sidebar-list {*/
+/*    position: relative;*/
+/*    margin: 0;*/
+/*}*/
+
+/*.event-details__right-sidebar-list li {*/
+/*    display: flex;*/
+/*    align-items: center;*/
+/*    justify-content: space-between;*/
+/*}*/
+
+/*.event-details__right-sidebar-list li+li {*/
+/*    margin-top: 17px;*/
+/*}*/
+
+
+
+/*.event-details__right-sidebar-list li .left p {*/
+/*    font-size: 16px;*/
+/*    margin: 0;*/
+/*    color: var(--thm-black);*/
+/*    font-weight: 900;*/
+/*}*/
+
+/*.event-details__right-sidebar-list li .right {*/
+/*    text-align: right;*/
+/*}*/
+
+/*.event-details__right-sidebar-list li .right h4 {*/
+/*    font-size: 14px;*/
+/*    font-weight: 900;*/
+/*    color: var(--thm-primary);*/
+/*}*/
+
+/*.event-details__right-map {*/
+/*    position: relative;*/
+/*    display: block;*/
+/*    margin-top: 30px;*/
+/*}*/
+
+/*.event-details__map-box {*/
+/*    height: 390px;*/
+/*    width: 100%;*/
+/*    border: none;*/
+/*}*/
 /*--------------------------------------------------------------
 ## Contact Page
 --------------------------------------------------------------*/
