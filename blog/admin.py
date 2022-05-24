@@ -2,7 +2,7 @@ from django.contrib import admin
 
 # Register your models here.
 
-from .models import Post, Report
+from .models import Post, Report, Gallery
 
 
 #
@@ -29,3 +29,7 @@ class ReportAdmin(admin.ModelAdmin):
     # raw_id_fields = ('author',)
     # date_hierarchy = 'publish'
     ordering = ('rp_title', 'date')
+
+
+admin.site.register(Gallery)
+# class GalleryAdmin(admin.ModelAdmin):

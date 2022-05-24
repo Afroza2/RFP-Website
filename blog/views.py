@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 # Create your views here.
 from django.views.generic import ListView, DetailView
-from .models import Post, Report
+from .models import Post, Report, Gallery
 
 
 class Home(ListView):
@@ -22,3 +22,9 @@ class Contact(ListView):
     model = Post
     context_object_name = 'contact'
     template_name = 'blog/contact.html'
+
+
+class Gallery(ListView):
+    model = Gallery
+    context_object_name = 'gallery'
+    template_name = 'blog/photo.html'

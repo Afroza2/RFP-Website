@@ -32,7 +32,12 @@ class Report(models.Model):
     rp_title = models.CharField(max_length=500)
     url = models.URLField(max_length=500)
     date = models.DateTimeField(default=timezone.now)
+
     # rp_body = models.TextField()
 
     def __str__(self):
         return self.rp_title
+
+
+class Gallery(models.Model):
+    photo = models.ImageField(upload_to=None, height_field=None, width_field=None)
