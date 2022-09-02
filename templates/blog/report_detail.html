@@ -1,13 +1,16 @@
 <!--templates/blog/blog_detail.html-->
 {% extends 'base.html' %}
 {% block container %}
+      <div class="stricky-header stricked-menu main-menu">
+        <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
+    </div><!-- /.stricky-header -->
 <div class="row">
     <div class="card">
-{#        <h5 class="card-header">{{ report.rp_title }}</h5>#}
-{#        <div class="card-body">#}
-{#            <h5 class="card-title">Published: {{ report.date }}</h5>#}
-{#            <embed src="{{ report.url }}" width='50%' height='100%' allow="autoplay">#}
-{#        </div>#}
+        <h5 class="card-header">{{ report.rp_title }}</h5>
+        <div class="card-body">
+            <h5 class="card-title">Published: {{ report.date }}</h5>
+            <embed src="{{ report.url }}" width='50%' height='100%' allow="autoplay">
+        </div>
     </div>
 </div>
 {% endblock %}

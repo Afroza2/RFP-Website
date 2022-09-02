@@ -32,28 +32,29 @@ class Post(models.Model):
     def get_absolute_url(self):
         return reverse('blog:details', args=[self.slug])
 
+
 #
 # class ImageList(models.Model):
 #     body_image = models.ImageField(null=True, blank=True)
 #     post = models.ForeignKey(Post, on_delete=models.CASCADE)
 #
 #
-# class Report(models.Model):
-#     rp_title = models.CharField(max_length=500)
-#     slug = models.CharField(_("Slug"), max_length=200)
-#     url = models.URLField(max_length=500)
-#     date = models.DateTimeField(default=timezone.now)
-#
-#     # rp_body = models.TextField()
-#
-#     def __str__(self):
-#         return self.rp_title
-#
-#     class Meta:
-#         ordering = ('date',)
-#
-#     def get_absolute_url(self):
-#         return reverse('report:report_detail', args=[self.slug])
+class Report(models.Model):
+    rp_title = models.CharField(max_length=500)
+    slug = models.CharField(_("Slug"), max_length=200)
+    url = models.URLField(max_length=500)
+    date = models.DateTimeField(default=timezone.now)
+
+    # rp_body = models.TextField()
+
+    def __str__(self):
+        return self.rp_title
+
+    class Meta:
+        ordering = ('date',)
+
+    def get_absolute_url(self):
+        return reverse('report:report_detail', args=[self.slug])
 #
 #
 # class Gallery(models.Model):

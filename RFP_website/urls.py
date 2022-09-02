@@ -24,6 +24,6 @@ urlpatterns = [
                   path('markdownx/', include('markdownx.urls')),
                   path('contact', include('blog.urls', namespace='contact')),
                   path('photo-gallery', include('blog.urls', namespace='gallery')),
-                  path('reports', include('blog.urls', namespace='report')),
+                  path('reports/', include('blog.urls', namespace='report')),
 
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
