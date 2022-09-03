@@ -34,7 +34,7 @@ class ReportListView(ListView):
 #
 class ReportDetailView(DetailView):
     model = Report
-    slug_field = 'slug'
+    # slug_field = 'slug'
     context_object_name = 'report'
     template_name = 'blog/report_detail.html'
 
