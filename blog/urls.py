@@ -1,16 +1,25 @@
 from django.urls import path, re_path
 
 from . import views
-from .views import Home, Contact, ReportListView, ReportDetailView
-    # , Gallery
+from .views import Home, HomeDetail, Contact, ReportListView, ReportDetailView, NewsListView, NewsDetailView, \
+    MemberListView, ProjectListView, ProjectDetailView
+
+# , Gallery
 
 app_name = 'blog'
 urlpatterns = [
     # post views
     path('', Home.as_view(), name='home'),
-    path('<slug:slug>/', views.HomeDetail.as_view(), name='details'),
-    path('contact', Contact.as_view(), name='contact'),
+    path('home/<slug:slug>/', HomeDetail.as_view(), name='details'),
+    path('members/', MemberListView.as_view(), name='members'),
     # path('photo-gallery', Gallery.as_view(), name='gallery'),
-    path('reports', ReportListView.as_view(), name='report_list'),
-    path('<slug:slug>', ReportDetailView.as_view(), name='report_detail'),
+
+    path('projects/', ProjectListView.as_view(), name='project_list'),
+    path('projects/<slug:slug>/', ProjectDetailView.as_view(), name='project_detail'),
+    path('reports/', ReportListView.as_view(), name='report_list'),
+    path('report/<slug:slug>/', ReportDetailView.as_view(), name='report_detail'),
+    path('news/', NewsListView.as_view(), name='news_list'),
+    path('news/<slug:slug>/', NewsDetailView.as_view(), name='news_detail'),
+
+    path('contact/', Contact.as_view(), name='contact'),
 ]

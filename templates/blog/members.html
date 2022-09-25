@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+{% load markdown_extras %}
+{% load static %}
+{% block container %}
+     <div class="stricky-header stricked-menu main-menu">
+            <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
+        </div><!-- /.stricky-header -->
+
+       <!--Page Header Start-->
+       <section class="page-header">
+            <div class="page-header__bg" style="background-image: url('{% static "assets/images/backgrounds/page-header-bg-1-1.jpg" %}')"></div>
+            <!-- /.page-header__bg -->
+            <div class="container">
+                <h2>Members</h2>
+                <ul class="thm-breadcrumb list-unstyled">
+                <li><a href="/">Home</a></li>
+                <li class="color-thm-gray">/</li>
+                <li><span>Members</span></li>
+            </ul>
+            </div>
+        </section>
+        <!--Page Header End-->
+
+
+    <!--Team One Start-->
+        <section class="team-one team-page">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4">
+                       <!--Team One Single-->
+                        <div class="team-one__single">
+                            <div class="team-one__img-box">
+                                <div class="team-one__img">
+                                    <img src={% static "assets/images/team/team-page-img-1.jpg"%} alt="">
+                                </div>
+                                <div class="team-one__member-name">
+                                    <h2>Janne</h2>
+                                </div>
+                            </div>
+                            <div class="team-one__content">
+                                <h4 class="team-one__member-title">Executive Committee, RfP Bangladesh</h4>
+                                <p class="team-one__text-box">There are many of lorem ipsum available but the have in some form.</p>
+                            </div>
+                            <div class="team-one__social">
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-facebook-square"></i></a>
+                                <a href="#"><i class="fab fa-dribbble"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4">
+                       <!--Team One Single-->
+                        <div class="team-one__single">
+                            <div class="team-one__img-box">
+                                <div class="team-one__img">
+                                    <img src={% static "assets/images/team/team-page-img-2.jpg"%} alt="">
+                                </div>
+                                <div class="team-one__member-name">
+                                    <h2>David</h2>
+                                </div>
+                            </div>
+                            <div class="team-one__content">
+                                <h4 class="team-one__member-title">Executive Committee, RfP Bangladesh Women of Faith Network (RfP-BWOFN)</h4>
+                                <p class="team-one__text-box">There are many of lorem ipsum available but the have in some form.</p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4">
+                       <!--Team One Single-->
+                        <div class="team-one__single">
+                            <div class="team-one__img-box">
+                                <div class="team-one__img">
+                                    <img src={% static "assets/images/team/team-page-img-3.jpg"%} alt="">
+                                </div>
+                                <div class="team-one__member-name">
+                                    <h2>Sarah</h2>
+                                </div>
+                            </div>
+                            <div class="team-one__content">
+                                <h4 class="team-one__member-title">Executive Committee, RfP Bangladesh Interfaith Youth Network (RfP-BIYN)</h4>
+                                <p class="team-one__text-box">There are many of lorem ipsum available but the have in some form.</p>
+                            </div>
+
+                        </div>
+                    </div>
+{#                    <div class="col-xl-4 col-lg-4">#}
+{#                       <!--Team One Single-->#}
+{#                        <div class="team-one__single">#}
+{##}
+{#                            <div class="team-one__content">#}
+{#                                <h4 class="team-one__member-title">Volunteer</h4>#}
+{#                                <p class="team-one__text-box">There are many of lorem ipsum available but the have in some form.</p>#}
+{#                            </div>#}
+{##}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <div class="col-xl-4 col-lg-4">#}
+{#                       <!--Team One Single-->#}
+{#                        <div class="team-one__single">#}
+{#                            <div class="team-one__img-box">#}
+{#                                <div class="team-one__img">#}
+{#                                    <img src="assets/images/team/team-page-img-5.jpg" alt="">#}
+{#                                </div>#}
+{#                                <div class="team-one__member-name">#}
+{#                                    <h2>Hallen</h2>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <div class="team-one__content">#}
+{#                                <h4 class="team-one__member-title">Volunteer</h4>#}
+{#                                <p class="team-one__text-box">There are many of lorem ipsum available but the have in some form.</p>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <div class="col-xl-4 col-lg-4">#}
+{#                       <!--Team One Single-->#}
+{#                        <div class="team-one__single">#}
+{#                            <div class="team-one__img-box">#}
+{#                                <div class="team-one__img">#}
+{#                                    <img src="assets/images/team/team-page-img-6.jpg" alt="">#}
+{#                                </div>#}
+{#                                <div class="team-one__member-name">#}
+{#                                    <h2>Pitter</h2>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <div class="team-one__content">#}
+{#                                <h4 class="team-one__member-title">Volunteer</h4>#}
+{#                                <p class="team-one__text-box">There are many of lorem ipsum available but the have in some form.</p>#}
+{#                            </div>#}
+{#                        </div>#}
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--Team One End-->
+{% endblock %}

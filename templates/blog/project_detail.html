@@ -6,10 +6,10 @@
     </div><!-- /.stricky-header -->
     <div class="row" style="display: flex; text-align: center">
         <div class="card">
-            <h5 class="card-header">{{ report.rp_title }}</h5>
+            <h5 class="card-header">{{ project.pr_title }}</h5>
             <div class="card-body" style="justify-content: center">
-                <h5 class="card-title">Posted on {{ report.date |date:"M d, Y" }}</h5>
-                <embed src="{{ report.url }}" width="640" height="480" allow="autoplay">
+                <h5 class="card-title">Posted on {{ project.date |date:"M d, Y" }}</h5>
+                <embed src="{{ project.url }}" width="640" height="480" allow="autoplay">
             </div>
         </div>
     </div>

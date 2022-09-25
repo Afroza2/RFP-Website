@@ -4,7 +4,7 @@ from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from django.views.generic import ListView, DetailView
 from django.http import Http404
-from .models import Post, Report
+from .models import Post, Report, News, Member, Project
 
 
 # , Report, Gallery
@@ -39,18 +39,43 @@ class ReportDetailView(DetailView):
     template_name = 'blog/report_detail.html'
 
 
-#
-#     def get_object(self):
-#         return get_object_or_404(Report, id=self.kwargs['pk'])
-#
+class NewsListView(ListView):
+    model = News
+    context_object_name = 'newss'
+    template_name = 'blog/news.html'
+
+
+class NewsDetailView(DetailView):
+    model = News
+    context_object_name = 'news'
+    template_name = 'blog/news_detail.html'
+
+
+class MemberListView(ListView):
+    model = Member
+    context_object_name = 'member'
+    template_name = 'blog/members.html'
+
 
 class Contact(ListView):
     model = Post
     context_object_name = 'contact'
     template_name = 'blog/contact.html'
 
+
 #
 # class Gallery(ListView):
 #     model = Gallery
 #     context_object_name = 'gallery'
 #     template_name = 'blog/photo.html'
+
+class ProjectListView(ListView):
+    model = Project
+    context_object_name = 'projects'
+    template_name = 'blog/project_list.html'
+
+
+class ProjectDetailView(DetailView):
+    model = Project
+    context_object_name = 'project'
+    template_name = 'blog/project_detail.html'

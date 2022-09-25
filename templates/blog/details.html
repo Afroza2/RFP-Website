@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load markdown_extras %}
 {% block container %}
        <div class="stricky-header stricked-menu main-menu">
         <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
@@ -10,11 +11,11 @@
              style="background-image: url('{% static "assets/images/backgrounds/page-header-bg-1-1.jpg" %}')"></div>
         <!-- /.page-header__bg -->
         <div class="container">
-            <h2>Event Details</h2>
+            <h2>Joint Statement</h2>
             <ul class="thm-breadcrumb list-unstyled">
                 <li><a href="home.html">Home</a></li>
                 <li class="color-thm-gray">/</li>
-                <li><span>Event Details</span></li>
+                <li><span>Joint Statement</span></li>
             </ul>
         </div>
     </section>
@@ -39,7 +40,7 @@
                     <div class="event-details__left">
                         <div class="event-details__top-content">
                             <h3 class="event-details__bottom-title">{{ details.title }}</h3>
-                            <p class="event-details__bottom-text-1">{{ details.body }}</p>
+                            <p class="event-details__bottom-text-1">{{ details.body|markdown| safe }}</p>
 
                         </div>
                         {#                            <div class="event-details__bottom-content">#}

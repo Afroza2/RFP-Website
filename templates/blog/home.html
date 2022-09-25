@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load markdown_extras %}
 {% block container %}
 
 
@@ -226,14 +227,13 @@
     </section>
 
     <!--3.news start-->
-
-
+    <p>hello</p>
     <section class="news-one">
         <div class="container">
             <div class="row">
                 <div class="col-xl-8 col-lg-8">
                     <div class="section-title text-left">
-                        <span class="section-title__tagline">National and International News</span>
+                        <span class="section-title__tagline">From Blogs</span>
                         <h2 class="section-title__title">Latest Posts
                         </h2>
                     </div>
@@ -247,82 +247,32 @@
             </div>
             <div class="row">
                 <div class="col-xl-6 col-lg-6">
-                    <div class="news-one__left">
-                        <div class="news-one__img">
-                            <img src='{% static "assets/images/blog/news-one-img-1.jpg" %}' alt="">
-                            <a href="news-details.html">
-                                <i class="fa fa-plus"></i>
-                            </a>
-                        </div>
-                        <div class="news-one__bottom">
-                            <ul class="list-unstyled news-one__meta">
-                                <li>20 Jan, 2021</li>
-                                <li><span>/</span></li>
-                                <li><a href="#">2 Comments</a></li>
-                            </ul>
-                            <h3 class="news-one__title">
-                                <a href="news-details.html">Donation is Hope for Poor Childrens in Africa</a>
-                            </h3>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xl-6 col-lg-6">
-                    <div class="news-one__right">
-                        <div class="news-one__right-single">
-                            <div class="news-one__right-img">
-                                <img src='{% static "assets/images/blog/news-one-right-img-1.jpg" %}' alt="">
-                                <a href="news-details.html">
-                                    <i class="fa fa-plus"></i>
-                                </a>
-                            </div>
-                            <div class="news-one__right-content">
-                                <ul class="list-unstyled news-one__right-meta">
-                                    <li>20 Jan, 2021</li>
-                                    <li><span>/</span></li>
-                                    <li><a href="#">2 Comments</a></li>
-                                </ul>
-                                <h3 class="news-one__right-title">
-                                    <a href="news-details.html">How Does Malnutrition Affect Children?</a>
-                                </h3>
-                            </div>
-                        </div>
-                        <div class="news-one__right-single">
-                            <div class="news-one__right-img">
-                                <img src='{% static "assets/images/blog/news-one-right-img-2.jpg" %}' alt="">
-                                <a href="news-details.html">
-                                    <i class="fa fa-plus"></i>
-                                </a>
-                            </div>
-                            <div class="news-one__right-content">
-                                <ul class="list-unstyled news-one__right-meta">
-                                    <li>20 Jan, 2021</li>
-                                    <li><span>/</span></li>
-                                    <li><a href="#">2 Comments</a></li>
-                                </ul>
-                                <h3 class="news-one__right-title">
-                                    <a href="news-details.html">Capitalize on low hanging fruit to identify</a>
-                                </h3>
-                            </div>
-                        </div>
-                        <div class="news-one__right-single">
-                            <div class="news-one__right-img">
-                                <img src='{% static "assets/images/blog/news-one-right-img-3.jpg" %}' alt="">
-                                <a href="news-details.html">
-                                    <i class="fa fa-plus"></i>
-                                </a>
-                            </div>
-                            <div class="news-one__right-content">
-                                <ul class="list-unstyled news-one__right-meta">
-                                    <li>20 Jan, 2021</li>
-                                    <li><span>/</span></li>
-                                    <li><a href="#">2 Comments</a></li>
-                                </ul>
-                                <h3 class="news-one__right-title">
-                                    <a href="news-details.html">Override the digital divide with additional</a>
-                                </h3>
-                            </div>
-                        </div>
-                    </div>
+                    {% for post in news_list %}
+                            <p class="welcome-one__right-text">{{ post.news_body | truncatechars:300 | markdown | safe }}</p>
+                            <a href="{{ post.get_absolute_url }}" class="welcome-one__btn thm-btn"><i
+                                    class="fas fa-arrow-circle-right"></i>Learn
+                                More</a>{% endfor %}
+{#                    {% for n in newslist %}#}
+{#                        <div class="news-one__left">#}
+{#                            <div class="news-one__img">#}
+{##}
+                                {#                                <img src={% static "assets/images/blog/news-one-img-1.jpg" %} alt="">#}
+                                {#                                <a href="news-details.html">#}
+                                {#                                    <i class="fa fa-plus"></i>#}
+                                {#                                </a>#}
+{#                            </div>#}
+{#                            <div class="news-one__bottom">#}
+{#                                <ul class="list-unstyled news-one__meta">#}
+{#                                    <li>20 Jan, 2021</li>#}
+{#                                    <li><span>/</span></li>#}
+{#                                    <li><a href="#">2 Comments</a></li>#}
+{#                                </ul>#}
+{#                                <h3 class="news-one__title">#}
+{#                                    <a href="news-details.html">{{ n.news_title }}</a>#}
+{#                                </h3>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                    {% endfor %}#}
                 </div>
             </div>
         </div>
@@ -681,10 +631,8 @@
                             <span class="section-title__tagline">Events</span>
                             <h2 class="section-title__title">Religions for Peace Myanmar and Bangladesh</h2>
                         </div>
-
-
                         {% for post in home %}
-                            <p class="welcome-one__right-text" >{{ post.body | truncatechars:200 }}</p>
+                            <p class="welcome-one__right-text">{{ post.body | truncatechars:300 | markdown | safe }}</p>
                             <a href="{{ post.get_absolute_url }}" class="welcome-one__btn thm-btn"><i
                                     class="fas fa-arrow-circle-right"></i>Learn
                                 More</a>{% endfor %}

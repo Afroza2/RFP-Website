@@ -15,14 +15,19 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path, include, re_path
+from django.urls import path, include
 
 urlpatterns = [
                   path('admin', admin.site.urls),
                   path('', include('blog.urls', namespace='blog')),
-                  path('markdownx/', include('markdownx.urls')),
-                  path('contact', include('blog.urls', namespace='contact')),
-                  path('photo-gallery', include('blog.urls', namespace='gallery')),
+                  # path('markdownx/', include('markdownx.urls')),
+                  path('ckeditor/', include('ckeditor_uploader.urls')),
+
+                  path('projects/', include('blog.urls', namespace='project')),
+                  # path('photo-gallery', include('blog.urls', namespace='gallery')),
                   path('reports/', include('blog.urls', namespace='report')),
+                  path('members/', include('blog.urls', namespace='members')),
+                  path('news/', include('blog.urls', namespace='news')),
+                  path('contact/', include('blog.urls', namespace='contact')),
 
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
