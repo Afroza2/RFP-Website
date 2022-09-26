@@ -4,6 +4,8 @@ from django.urls import reverse
 from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 
+from taggit.managers import TaggableManager
+
 # from markdownx.models import MarkdownxField
 from ckeditor.fields import RichTextField
 from ckeditor_uploader.fields import RichTextUploadingField
@@ -78,9 +80,13 @@ class News(models.Model):
     slug = models.SlugField(max_length=300, unique_for_date='nw_publish')
     news_author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='news_posts')
     news_body = RichTextField()
-    image_header = models.ImageField(null=True, blank=True)
+    # image_header = models.ImageField(null=True, blank=True)
+
+    image_header = models.ImageField(upload_to='featured_image/%Y/%m/%d/', null=True, blank=True)  # this
+
     nw_publish = models.DateTimeField(default=timezone.now)
     nw_status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='draft')
+    news_tags = TaggableManager()
 
     class Meta:
         ordering = ('nw_publish',)

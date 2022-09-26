@@ -8,6 +8,16 @@ from .models import Post, Report, News, Member, Project
 
 
 # , Report, Gallery
+class NewsListView(ListView):
+    model = News
+    context_object_name = 'newss'
+    template_name = 'blog/news.html'
+
+
+class NewsDetailView(DetailView):
+    model = News
+    context_object_name = 'news'
+    template_name = 'blog/news_detail.html'
 
 
 class Home(ListView):
@@ -15,11 +25,29 @@ class Home(ListView):
     context_object_name = 'home'
     template_name = 'blog/home.html'
 
+    def get_context_data(self, *, object_list=None, **kwargs):
+        data = super().get_context_data(**kwargs)
+        data['news_data_home'] = News.objects.all()
+        return data
+
 
 class HomeDetail(generic.DetailView):
     model = Post
     context_object_name = 'details'
     template_name = 'blog/details.html'
+
+
+#
+# class HomeNewsList(ListView):
+#     model = News
+#     context_object_name = 'homenewss'
+#     template_name = 'blog/news.html'
+#
+#
+# class HomeNewsDetailsView(DetailView):
+#     model = News
+#     context_object_name = 'homenews'
+#     template_name = 'blog/news_detail.html'
 
 
 class ReportListView(ListView):
@@ -38,17 +66,10 @@ class ReportDetailView(DetailView):
     context_object_name = 'report'
     template_name = 'blog/report_detail.html'
 
-
-class NewsListView(ListView):
-    model = News
-    context_object_name = 'newss'
-    template_name = 'blog/news.html'
-
-
-class NewsDetailView(DetailView):
-    model = News
-    context_object_name = 'news'
-    template_name = 'blog/news_detail.html'
+    # def get_context_data(self, **kwargs):
+    #     context = super().get_context_data(**kwargs)
+    #     context["related_items"] = self.object.tags.similar_objects()[:4]
+    #     return context
 
 
 class MemberListView(ListView):

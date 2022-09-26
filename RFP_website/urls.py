@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-                  path('admin', admin.site.urls),
+                  path('admin/', admin.site.urls),
                   path('', include('blog.urls', namespace='blog')),
                   # path('markdownx/', include('markdownx.urls')),
                   path('ckeditor/', include('ckeditor_uploader.urls')),
@@ -28,6 +28,7 @@ urlpatterns = [
                   path('reports/', include('blog.urls', namespace='report')),
                   path('members/', include('blog.urls', namespace='members')),
                   path('news/', include('blog.urls', namespace='news')),
+                  path('blognews/', include('blog.urls', namespace='blognews')),
                   path('contact/', include('blog.urls', namespace='contact')),
 
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

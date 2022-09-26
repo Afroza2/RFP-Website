@@ -1,6 +1,5 @@
 {% extends 'base.html' %}
 {% load static %}
-{#{% load markdown_extras %}#}
 {% block container %}
     <div class="stricky-header stricked-menu main-menu">
         <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
@@ -22,16 +21,20 @@
     </section>
 
     <section class="news-page">
+        {% if tag %}
+            <h2 class="mb-3">Posts tagged with "{{ tag.name }}"</h2>
+        {% endif %}
         <div class="container">
-            {% for news in newss %}
-                <div class="row">
+
+            <div class="row">
+                {% for news in newss %}
                     <div class="col-lg-4 wow fadeInUp" data-wow-delay="100ms">
                         <!--News Two Single-->
                         <div class="news-two__single">
                             <div class="news-two__img-box">
                                 <div class="news-two__img">
                                     {% if news.image_header %}
-                                        <img src={{ news.image_header }} alt="">
+                                        <img src={{ news.image_header.url }} alt="{{ news.news_title }}">
                                     {% endif %}
                                     <a href={{ news.get_absolute_url }}>
                                         <i class="fa fa-plus"></i>
@@ -41,9 +44,12 @@
                                     <p>{{ news.nw_publish |date:"M d, Y" }}</p>
                                 </div>
                             </div>
+
                             <div class="news-two__content">
+
                                 <ul class="list-unstyled news-two__meta">
                                     <li><a href="#"><i class="far fa-user-circle"></i> {{ news.news_author }}</a></li>
+
                                     {#                                    <li><span>/</span></li>#}
                                     {#                                    <li><a href="#"><i class="far fa-comments"></i>{{ news.nw_publish }}</a>#}
                                     {#                                    </li>#}
@@ -51,12 +57,27 @@
                                 <h3>
                                     <a href={{ news.get_absolute_url }}>{{ news.news_title }}</a>
                                 </h3>
-                                <p class="news-two__text">{{ news.news_body | truncatechars:200 | safe }}</p>
+                                <p class="news-two__text">{{ news.news_body | truncatechars:110 | safe }}</p>
                             </div>
                         </div>
                     </div>
-                </div>
-            {% endfor %}
+                {% endfor %}
+            </div>
+
+        </div>
+
+        <div class="sidebar__single sidebar__tags">
+            <h3 class="sidebar__title">Popular Tags</h3>
+            <div class="sidebar__tags-list">
+                {% for tag in news.news_tags.all %}
+                    <a href="{% url 'blog:post_tag' tag.slug %}"
+                       class="link-light text-decoration-none badge bg-secondary">
+                        {{ tag.name }}
+                    </a>
+                    <!-- {% if not forloop.last %}, {% endif %} -->
+                {% endfor %}
+
+            </div>
         </div>
     </section>
 

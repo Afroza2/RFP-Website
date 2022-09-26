@@ -1,6 +1,5 @@
 {% extends 'base.html' %}
 {% load static %}
-{% load markdown_extras %}
 {% block container %}
 
 
@@ -227,7 +226,7 @@
     </section>
 
     <!--3.news start-->
-    <p>hello</p>
+
     <section class="news-one">
         <div class="container">
             <div class="row">
@@ -238,41 +237,65 @@
                         </h2>
                     </div>
                 </div>
-                <div class="col-xl-4 col-lg-4">
-                    <div class="news-one__button-box">
-                        <a href="#" class="news-one__btn thm-btn"><i class="fas fa-arrow-circle-right"></i>View
-                            More</a>
-                    </div>
-                </div>
+
             </div>
             <div class="row">
                 <div class="col-xl-6 col-lg-6">
-                    {% for post in news_list %}
-                            <p class="welcome-one__right-text">{{ post.news_body | truncatechars:300 | markdown | safe }}</p>
-                            <a href="{{ post.get_absolute_url }}" class="welcome-one__btn thm-btn"><i
-                                    class="fas fa-arrow-circle-right"></i>Learn
-                                More</a>{% endfor %}
-{#                    {% for n in newslist %}#}
-{#                        <div class="news-one__left">#}
-{#                            <div class="news-one__img">#}
-{##}
-                                {#                                <img src={% static "assets/images/blog/news-one-img-1.jpg" %} alt="">#}
-                                {#                                <a href="news-details.html">#}
-                                {#                                    <i class="fa fa-plus"></i>#}
-                                {#                                </a>#}
-{#                            </div>#}
-{#                            <div class="news-one__bottom">#}
-{#                                <ul class="list-unstyled news-one__meta">#}
-{#                                    <li>20 Jan, 2021</li>#}
-{#                                    <li><span>/</span></li>#}
-{#                                    <li><a href="#">2 Comments</a></li>#}
-{#                                </ul>#}
-{#                                <h3 class="news-one__title">#}
-{#                                    <a href="news-details.html">{{ n.news_title }}</a>#}
-{#                                </h3>#}
-{#                            </div>#}
-{#                        </div>#}
-{#                    {% endfor %}#}
+                    {% with  news_data_home.all|first as f_news %}
+                        {% if f_news %}
+                            <div class="news-one__left">
+                                <div class="news-one__img">
+
+                                    {#<img src={% static "assets/images/blog/news-one-img-1.jpg" %} alt="">#}
+
+                                    <img src={{ f_news.image_header.url }} alt="{{ news.news_title }}">
+
+                                    <a href={{ f_news.get_absolute_url }}>
+                                        <i class="fa fa-plus"></i>
+                                    </a>
+                                </div>
+                                <div class="news-one__bottom">
+                                    <ul class="list-unstyled news-one__meta">
+                                        <li>{{ f_news.nw_publish|date:"M d, Y" }}</li>
+                                        <li><span>/</span></li>
+                                        <li><i class="far fa-user-circle"></i> {{ f_news.news_author }}</li>
+                                    </ul>
+                                    <h3 class="news-one__title">
+                                        <a href={{ f_news.get_absolute_url }}>{{ f_news.news_title }}</a>
+                                    </h3>
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% endwith %}
+                </div>
+                <div class="col-xl-6 col-lg-6">
+                    {% for news in news_data_home|slice:"1:" %}
+                        <div class="news-one__right">
+                            <div class="news-one__right-single">
+
+                                {#                                                            <div class="news-one__right-img">#}
+                                {#                                                                <img src={% static "assets/images/blog/news-one-right-img-1.jpg" %} alt="{{ news.news_title }}" width="270" height="167">#}
+                                {##}
+                                {#                                                                <a href={{ news.get_absolute_url }}>#}
+                                {#                                                                    <i class="fa fa-plus"></i>#}
+                                {#                                                                </a>#}
+                                {#                                                            </div>#}
+                                <div class="news-one__right-content"><br/>
+                                    <ul class="list-unstyled news-one__right-meta">
+                                        <li>{{ news.nw_publish|date:"M d, Y" }}</li>
+                                        <li><span>/</span></li>
+                                        <li><i class="far fa-user-circle"></i> {{ news.news_author }}</li>
+
+                                    </ul>
+                                    <h3 class="news-one__right-title">
+                                        <a href={{ news.get_absolute_url }}>{{ news.news_title }}</a>
+                                    </h3>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
@@ -632,7 +655,7 @@
                             <h2 class="section-title__title">Religions for Peace Myanmar and Bangladesh</h2>
                         </div>
                         {% for post in home %}
-                            <p class="welcome-one__right-text">{{ post.body | truncatechars:300 | markdown | safe }}</p>
+                            <p class="welcome-one__right-text">{{ post.body | truncatechars:300 | safe }}</p>
                             <a href="{{ post.get_absolute_url }}" class="welcome-one__btn thm-btn"><i
                                     class="fas fa-arrow-circle-right"></i>Learn
                                 More</a>{% endfor %}
