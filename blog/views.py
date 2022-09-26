@@ -2,9 +2,10 @@ from django.shortcuts import render, get_object_or_404
 
 # Create your views here.
 from django.views import generic
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, TemplateView
 from django.http import Http404
 from .models import Post, Report, News, Member, Project
+from django.db.models import Q
 
 
 # , Report, Gallery
@@ -12,6 +13,26 @@ class NewsListView(ListView):
     model = News
     context_object_name = 'newss'
     template_name = 'blog/news.html'
+
+
+class SearchView(TemplateView):
+    template_name = 'blog/search_results.html'
+    model = News
+
+    # def get_queryset(self):
+    #     name = self.kwargs.get('name', '')
+    #     object_list = self.model.objects.all()
+    #     if name:
+    #         object_list = object_list.filter(name__icontains=name)
+    #     return object_list
+
+    def get(self, request, *args, **kwargs):
+        q = request.GET.get('q', '')
+        self.results = News.objects.filter(news_title__icontains=q)
+        return super().get(request, *args, **kwargs)
+
+    def get_context_data(self, **kwargs):
+        return super().get_context_data(results=self.results, **kwargs)
 
 
 class NewsDetailView(DetailView):
@@ -37,19 +58,6 @@ class HomeDetail(generic.DetailView):
     template_name = 'blog/details.html'
 
 
-#
-# class HomeNewsList(ListView):
-#     model = News
-#     context_object_name = 'homenewss'
-#     template_name = 'blog/news.html'
-#
-#
-# class HomeNewsDetailsView(DetailView):
-#     model = News
-#     context_object_name = 'homenews'
-#     template_name = 'blog/news_detail.html'
-
-
 class ReportListView(ListView):
     model = Report
     context_object_name = 'reports'
@@ -65,11 +73,6 @@ class ReportDetailView(DetailView):
     # slug_field = 'slug'
     context_object_name = 'report'
     template_name = 'blog/report_detail.html'
-
-    # def get_context_data(self, **kwargs):
-    #     context = super().get_context_data(**kwargs)
-    #     context["related_items"] = self.object.tags.similar_objects()[:4]
-    #     return context
 
 
 class MemberListView(ListView):

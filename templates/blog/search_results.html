@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block container %}
+
+    <!-- templates/search_results.html -->
+
+<h1>Search Results</h1>
+<ul>
+  {% for news in results %}
+    <li>
+      {{ news }}
+    </li>
+  {% endfor %}
+</ul>
+
+{% endblock %}

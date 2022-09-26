@@ -88,6 +88,9 @@ class News(models.Model):
     nw_status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='draft')
     news_tags = TaggableManager()
 
+    def __unicode__(self):
+        return '%name' % {'name': self.news_title}
+
     class Meta:
         ordering = ('nw_publish',)
 

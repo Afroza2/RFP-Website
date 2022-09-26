@@ -121,7 +121,13 @@
                             <li><a href="/contact">Contact</a></li>
                         </ul>
                         <div class="main-menu__right">
-                            <a href="#" class="main-menu__search search-toggler icon-magnifying-glass"></a>
+{#                            <a href="#" class="main-menu__search search-toggler icon-magnifying-glass"></a>#}
+
+                            <form action="{% url 'blog:search' %}" method="get">
+
+                                    <input class="main-menu__search search-toggler icon-magnifying-glass" name="q" type="text" placeholder="Search...">
+
+                            </form>
 {#                            <a href="#" class="main-menu__cart icon-shopping-cart  "></a>#}
                             <div class="main-menu__phone-contact">
                                 <div class="main-menu__phone-icon">

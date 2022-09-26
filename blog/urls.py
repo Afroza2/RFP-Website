@@ -2,14 +2,16 @@ from django.urls import path, re_path
 
 from . import views
 from .views import Home, HomeDetail, Contact, ReportListView, ReportDetailView, NewsListView, NewsDetailView, \
-    MemberListView, ProjectListView, ProjectDetailView
+    MemberListView, ProjectListView, ProjectDetailView, SearchView
 
 # , Gallery
 
 app_name = 'blog'
 urlpatterns = [
     # post views
+
     path('', Home.as_view(), name='home'),
+    path("search", SearchView.as_view(), name='search'),
     path('home/<slug:slug>/', HomeDetail.as_view(), name='details'),
     path('members/', MemberListView.as_view(), name='members'),
     # path('photo-gallery', Gallery.as_view(), name='gallery'),
