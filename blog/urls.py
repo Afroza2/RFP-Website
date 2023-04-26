@@ -2,7 +2,8 @@ from django.urls import path, re_path
 
 from . import views
 from .views import Home, HomeDetail, Contact, ReportListView, ReportDetailView, NewsListView, NewsDetailView, \
-    MemberListView, ProjectListView, ProjectDetailView, SearchView
+    MemberListView, ProjectListView, ProjectDetailView, SearchView, ReportYearArchiveView, PhotoGallery
+from django.views.generic.base import RedirectView
 
 # , Gallery
 
@@ -16,12 +17,15 @@ urlpatterns = [
     path('members/', MemberListView.as_view(), name='members'),
     # path('photo-gallery', Gallery.as_view(), name='gallery'),
     path('projects/', ProjectListView.as_view(), name='project_list'),
+    path('photo-gallery/', PhotoGallery.as_view(), name='gallery'),
     path('projects/<slug:slug>/', ProjectDetailView.as_view(), name='project_detail'),
     path('reports/', ReportListView.as_view(), name='report_list'),
     path('report/<slug:slug>/', ReportDetailView.as_view(), name='report_detail'),
+    path('report/<int:year>/', ReportYearArchiveView.as_view(), name="report_year_archive"),
     path('news/', NewsListView.as_view(), name='news_list'),
     path('news/<slug:slug>/', NewsDetailView.as_view(), name='news_detail'),
     path('taggit/tag/<slug:tag_slug>/', NewsListView.as_view(), name='post_tag'),
+    path('rfp-families/', RedirectView.as_view(url='https://www.rfp.org/where-we-work/')),
     # path('blognews/', HomeNewsList.as_view(), name='home_news_list'),
     # path('blognews/<slug:slug>/', HomeNewsDetailsView.as_view(), name='home_news_detail'),
     path('contact/', Contact.as_view(), name='contact'),

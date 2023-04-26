@@ -3,23 +3,24 @@
 {% load static %}
 
 {% block container %}
- <div class="stricky-header stricked-menu main-menu">
-            <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
-        </div><!-- /.stricky-header -->
+    <div class="stricky-header stricked-menu main-menu">
+        <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
+    </div><!-- /.stricky-header -->
 
-      <!--Page Header Start-->
-       <section class="page-header">
-            <div class="page-header__bg" style="background-image: url('{% static "assets/images/backgrounds/page-header-bg-1-1.jpg" %}')"></div>
-            <!-- /.page-header__bg -->
-            <div class="container">
-                <h2>Contact</h2>
-                <ul class="thm-breadcrumb list-unstyled">
-                    <li><a href="/">Home</a></li>
-                    <li class="color-thm-gray">/</li>
-                    <li><span>Contact</span></li>
-                </ul>
-            </div>
-        </section>
+    <!--Page Header Start-->
+    <section class="page-header">
+        <div class="page-header__bg"
+             style="background-image: url('{% static "assets/images/backgrounds/page-header-bg-1-1.jpg" %}')"></div>
+        <!-- /.page-header__bg -->
+        <div class="container">
+            <h2>Contact</h2>
+            <ul class="thm-breadcrumb list-unstyled">
+                <li><a href="/">Home</a></li>
+                <li class="color-thm-gray">/</li>
+                <li><span>Contact</span></li>
+            </ul>
+        </div>
+    </section>
     <!--Contact page Start-->
     <section class="contact-page">
         <div class="container">
@@ -31,29 +32,29 @@
                 <div class="col-xl-6 col-lg-6">
                     <div class="contact-page__left">
                         <div class="contact-page__img">
-                            <img src='{% static "assets/images/resources/contact-page-img-1.jpg"  %}'alt="">
+                            <img src='{% static "assets/images/resources/contact-page-img-1.jpg" %}' alt="">
                         </div>
                         <p class="contact-page__text">There are many variations of passages of available but the
                             majority have suffered alteration in some form, by injected humou or randomised words even
                             slightly believable.</p>
                         <div class="contact-page__contact-info">
                             <ul class="contact-page__contact-list list-unstyled">
-{#                                <li>#}
-{#                                    <div class="icon">#}
-{#                                        <span class="icon-chat"></span>#}
-{#                                    </div>#}
-{#                                    <div class="text">#}
-{#                                        <p>Call Anytime</p>#}
-{#                                        <a href="tel:92 666 888 0000">92 666 888 0000</a>#}
-{#                                    </div>#}
-{#                                </li>#}
+                                {#                                <li>#}
+                                {#                                    <div class="icon">#}
+                                {#                                        <span class="icon-chat"></span>#}
+                                {#                                    </div>#}
+                                {#                                    <div class="text">#}
+                                {#                                        <p>Call Anytime</p>#}
+                                {#                                        <a href="tel:92 666 888 0000">92 666 888 0000</a>#}
+                                {#                                    </div>#}
+                                {#                                </li>#}
                                 <li>
                                     <div class="icon">
                                         <span class="icon-message"></span>
                                     </div>
                                     <div class="text">
                                         <p>Send Email</p>
-                                        <a href="mailto:nhmabu@rfpbangladesh.org">nhmabu@rfpbangladesh.org</a>
+                                        <a href="rfpbangladesh@outlook.com">rfpbangladesh@outlook.com</a>
                                     </div>
                                 </li>
                                 <li>
@@ -62,7 +63,7 @@
                                     </div>
                                     <div class="text">
                                         <p>Visit Office</p>
-                                        <h5>80 broklyn golden street</h5>
+                                        <h5>43/3, Road 4, Dhanmondi, Dhaka</h5>
                                     </div>
                                 </li>
                             </ul>
@@ -71,7 +72,8 @@
                 </div>
                 <div class="col-xl-6 col-lg-6">
                     <div class="contact-page__form">
-                        <form action='{% static "assets/inc/sendemail.php" %}' class="contact-page__main-form contact-form-validated">
+                        <form action='{% static "assets/inc/sendemail.php" %}'
+                              class="contact-page__main-form contact-form-validated">
                             <div class="row">
                                 <div class="col-xl-12">
                                     <div class="contact-page__input-box">
@@ -116,9 +118,12 @@
 
     <!--Contact Page Google Map Start-->
     <section class="contact-page-google-map">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4562.753041141002!2d-118.80123790098536!3d34.152323469614075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80e82469c2162619%3A0xba03efb7998eef6d!2sCostco+Wholesale!5e0!3m2!1sbn!2sbd!4v1562518641290!5m2!1sbn!2sbd"
-                class="contact-page-google-map__one" allowfullscreen></iframe>
+        {#        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4562.753041141002!2d-118.80123790098536!3d34.152323469614075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80e82469c2162619%3A0xba03efb7998eef6d!2sCostco+Wholesale!5e0!3m2!1sbn!2sbd!4v1562518641290!5m2!1sbn!2sbd"#}
+        {#                class="contact-page-google-map__one" allowfullscreen></iframe>#}
+{#        <iframe src="https://www.google.com/maps/d/embed?mid=1wBdXg27X6Gxf443N_hWTAp3AqaU&hl=en_US&ehbc=2E312F"#}
+{#                width="640" height="480" class="contact-page-google-map__one" allowfullscreen></iframe>#}
 
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3648.6666760906633!2d90.39323798139051!3d23.865967248204683!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c4239727e907%3A0xe6fdfbd43f81e3b7!2s43%20Road-4%2C%20Dhaka%201230%2C%20Bangladesh!5e0!3m2!1sen!2sus!4v1679236590733!5m2!1sen!2sus" width="600" height="450" style="border:0;" class="contact-page-google-map__one" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </section>
     <!--Contact Page Google Map End-->
 
@@ -129,7 +134,7 @@
                 <div class="col-xl-12">
                     <div class="become-volunteer__inner">
                         <div class="become-volunteer__left">
-                            <h2>Join your hand with us for <br> a better life and future</h2>
+                            <h2>Religion for Peace Bangladesh</h2>
                             <div class="become-volunteer__big-text">
                                 <h2>Become a Volunteers</h2>
                             </div>

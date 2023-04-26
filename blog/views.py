@@ -4,8 +4,9 @@ from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from django.views.generic import ListView, DetailView, TemplateView
 from django.http import Http404
-from .models import Post, Report, News, Member, Project
+from .models import Post, Report, News, Member, Project, Gallery
 from django.db.models import Q
+from django.views.generic.dates import YearArchiveView
 
 
 # , Report, Gallery
@@ -49,7 +50,13 @@ class Home(ListView):
     def get_context_data(self, *, object_list=None, **kwargs):
         data = super().get_context_data(**kwargs)
         data['news_data_home'] = News.objects.all()
+        data['photo_home'] = Gallery.objects.all()
         return data
+
+    # def get_context_data(self, *, object_list=None, **kwargs):
+    #     data = super().get_context_data(**kwargs)
+    #
+    #     return data
 
 
 class HomeDetail(generic.DetailView):
@@ -62,6 +69,13 @@ class ReportListView(ListView):
     model = Report
     context_object_name = 'reports'
     template_name = 'blog/report_list.html'
+
+
+class ReportYearArchiveView(YearArchiveView):
+    queryset = Report.objects.all()
+    date_field = "pub_date"
+    make_object_list = True
+    allow_future = True
 
 
 #     # def get_object(self, queryset=None):
@@ -88,10 +102,13 @@ class Contact(ListView):
 
 
 #
-# class Gallery(ListView):
-#     model = Gallery
-#     context_object_name = 'gallery'
-#     template_name = 'blog/photo.html'
+class PhotoGallery(ListView):
+    model = Gallery
+    context_object_name = 'gallery'
+    template_name = 'blog/photo.html'
+
+
+
 
 class ProjectListView(ListView):
     model = Project

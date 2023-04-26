@@ -65,10 +65,24 @@ class Report(models.Model):
 
 #
 #
-# class Gallery(models.Model):
-#     img_w = models.PositiveIntegerField(default=250)
-#     img_h = models.PositiveIntegerField(default=413)
-#     photo = models.ImageField(upload_to=None, height_field='img_h', width_field='img_w')
+class Gallery(models.Model):
+    img_w = models.PositiveIntegerField(default=250)
+    img_h = models.PositiveIntegerField(default=413)
+    ph = models.ImageField(upload_to=None, height_field='img_h', width_field='img_w')
+    p_slug = models.SlugField(max_length=300, unique_for_date='p_date', default="1")
+    p_date = models.DateTimeField(default=timezone.now)
+    p_caption = models.CharField(max_length=500, default="photo")
+    objects = models.Manager()
+
+    def __str__(self):
+        return self.p_caption
+
+    class Meta:
+        ordering = ('p_date',)
+
+    def get_absolute_url(self):
+        return reverse('blog', args=[self.p_slug])
+
 
 class News(models.Model):
     STATUS_CHOICES = (

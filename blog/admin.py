@@ -2,7 +2,7 @@ from django.contrib import admin
 
 # Register your models here.
 
-from .models import Post, Report, News, Member, Project
+from .models import Post, Report, News, Member, Project, Gallery
 
 
 # from markdownx.admin import MarkdownxModelAdmin
@@ -48,7 +48,16 @@ admin.site.register(Report, ReportAdmin)
 #
 #
 # admin.site.register(Gallery)
-# # class GalleryAdmin(admin.ModelAdmin):
+class GalleryAdmin(admin.ModelAdmin):
+    list_display = ('p_caption', 'p_date')
+    list_filter = ('p_caption', 'p_date')
+    search_fields = ('p_caption', 'p_date')
+    prepopulated_fields = {'p_slug': ('p_caption',)}
+
+
+admin.site.register(Gallery, GalleryAdmin)
+
+
 class NewsAdmin(admin.ModelAdmin):
     list_display = ('news_title', 'slug', 'news_author', 'nw_publish', 'nw_status')
     list_filter = ('nw_status', 'nw_publish', 'news_author')

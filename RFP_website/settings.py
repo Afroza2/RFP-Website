@@ -28,6 +28,11 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
+
+#Admin
+#rfp#222
+
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',

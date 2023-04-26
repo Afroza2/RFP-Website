@@ -34,10 +34,10 @@
 
                         <div class="gallery-page__single">
                             <div class="gallery-page__img-box">
-                                <img src="{{ p.photo }}" alt="" width="{{ p.img_w }}" height="{{ p.img_h }}">
+                                <img src="{{ p.photo.url }}" alt="" width="300" height="300">
                                 <div class="gallery-page__hover-content-box">
-                                    <h2>Name</h2>
-                                    <p>Location</p>
+                                    <h2>{{ p.p_caption }}</h2>
+{#                                    <p>Location</p>#}
                                 </div>
                             </div>
                         </div>

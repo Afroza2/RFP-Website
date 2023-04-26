@@ -68,8 +68,9 @@
 
         <div class="sidebar__single sidebar__tags">
             <h3 class="sidebar__title">Popular Tags</h3>
+            <p>meow</p>
             <div class="sidebar__tags-list">
-                {% for tag in news.news_tags.all %}
+                {% for tag in news.news_tags %}
                     <a href="{% url 'blog:post_tag' tag.slug %}"
                        class="link-light text-decoration-none badge bg-secondary">
                         {{ tag.name }}

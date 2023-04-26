@@ -23,14 +23,35 @@
 
     <section class="reports-page">
         <div class="container">
-            {% for project in projects %}
-                <div class="col-xl-4 col-lg-6 col-md-6">
-                    <ul class="list-styled">
-                        <li><a href="{{ project.get_absolute_url }}"><h5 class="reports-title">{{ project.pr_title }}</h5></a>
-                            </li>
-                    </ul>
-                </div>
-            {% endfor %}
+{#            {% for project in projects %}#}
+{#                <div class="col-xl-4 col-lg-6 col-md-6">#}
+{#                    <ul class="list-styled">#}
+{#                        <li><a href="{{ project.get_absolute_url }}"><h5 class="reports-title">{{ project.pr_title }}</h5></a>#}
+{#                            </li>#}
+{#                    </ul>#}
+{#                </div>#}
+{#            {% endfor %}#}
+            <section class="events-page">
+        <div class="container">
+            <div class="row">
+                {% for project in projects %}
+                    <div class="col-xl-4 col-lg-6 col-md-6">
+                        <!--Events One Single-->
+                        <div class="events-one__single">
+                            <div class="events-one__img">
+                                <img src= "{% static 'assets/images/resources/events-page-img-1.jpg' %}" alt="">
+
+                                <div class="events-one__bottom">
+                                    <h3 class="events-one__bottom-title"><a href="{{ project.get_absolute_url }}"><h5 class="reports-title">{{ project.pr_title }}</h5>
+                                             </a></h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
         </div>
     </section>
     {#    <embed src="{{ report.url }}" width='50%' height='100%' allow="autoplay">#}
