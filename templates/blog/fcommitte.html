@@ -1,0 +1,262 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block container %}
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .container {
+            padding: 64px;
+        }
+
+        .row:after {
+            content: "";
+            display: table;
+            clear: both
+        }
+
+        .column-66 {
+            float: left;
+            width: 66.66666%;
+            padding: 20px;
+        }
+
+        .column-33 {
+            float: left;
+            width: 33.33333%;
+            padding: 20px;
+        }
+
+        .large-font {
+            font-size: 48px;
+        }
+
+        .xlarge-font {
+            font-size: 64px
+        }
+
+        .button {
+            border: none;
+            color: white;
+            padding: 14px 28px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #04AA6D;
+        }
+
+        img {
+            display: block;
+            height: auto;
+            max-width: 100%;
+        }
+
+        @media screen and (max-width: 1000px) {
+            .column-66,
+            .column-33 {
+                width: 100%;
+                text-align: center;
+            }
+
+            img {
+                margin: auto;
+            }
+        }
+    </style>
+    <div class="stricky-header stricked-menu main-menu">
+        <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
+    </div><!-- /.stricky-header -->
+
+    <!--Page Header Start-->
+    <section class="page-header">
+        <div class="page-header__bg"
+             style="background-image: url('{% static "assets/images/backgrounds/page-header-bg-1-1.jpg" %}')"></div>
+        <!-- /.page-header__bg -->
+        <div class="container">
+            <h2>Former Committee</h2>
+            <ul class="thm-breadcrumb list-unstyled">
+                <li><a href="/">Home</a></li>
+                <li class="color-thm-gray">/</li>
+                <li><span>Former Committee</span></li>
+            </ul>
+        </div>
+    </section>
+
+
+    <section class="events-page">
+        <div class="container">
+            <div class="row">
+{#                <div style="text-align:center">#}
+{#                    <h2>Responsive Zig Zag Layout Example</h2>#}
+{#                    <p>Resize the browser window to see the effect.</p>#}
+{#                </div>#}
+
+                <!-- The App Section -->
+                <div class="container">
+                    <div class="row">
+                        <div class="column-66">
+{#                            <h1 class="xlarge-font"><b>The App</b></h1>#}
+{#                            <h1 class="large-font" style="color:MediumSeaGreen;"><b>Why buy it?</b></h1>#}
+{#                            <p><span style="font-size:36px">Take photos like a pro.</span> You should buy this app#}
+{#                                because lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut#}
+{#                                labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation#}
+{#                                ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>#}
+{#                            <button class="button">Download Application</button>#}
+                            <p>Prof.Dr. Kazi Nurul Islam -
+Islam
+
+</p>
+                        </div>
+                        <div class="column-33">
+{#                            <img src="/w3images/img_app.jpg" width="335" height="471">#}
+                             <h2 class="large-font" style="color:MediumSeaGreen;"><b>Advisor</b></h2>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Clarity Section -->
+                <div class="container" style="background-color:#f1f1f1">
+                    <div class="row">
+                        <div class="column-33">
+                            {#                            <img src="/w3images/app5.jpg" alt="App" width="335" height="471">#}
+                            <h2 class="large-font" style="color:MediumSeaGreen;"><b>Executive Committee</b></h2>
+                        </div>
+                        <div class="column-66">
+                            {#                            <h1 class="xlarge-font"><b>Clarity</b></h1>#}
+                            {#                            <h1 class="large-font" style="color:red;"><b>Pixels, who?</b></h1>#}
+                            {#                            <p><span style="font-size:24px">A revolution in resolution.</span> Sharp and clear photos#}
+                            {#                                with the world's best photo engine, incididunt ut labore et dolore magna aliqua. Ut enim#}
+                            {#                                ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquipex ea commodo#}
+                            {#                                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore#}
+                            {#                                eu fugiat nulla pariatur.</p>#}
+                            {#                            <button class="button" style="background-color:red">Read More</button>#}
+                            <ol>
+                                <li> President -
+                                    Principal Sukomal Barua -
+                                    Buddhism
+                                </li>
+                                <li>
+                                    Executive President -
+                                    Prof.Ranajit Kumar Dey -
+                                    Hinduism
+                                </li>
+                                <li>
+                                    Vice President -
+                                    <ul>
+                                        <li>
+                                            Probangshu Tripura -
+                                            Hindu(Tribal)
+                                        </li>
+                                        <li>
+                                            Prof: Hirendra Nath Biswas -
+                                            Hinduism
+                                        </li>
+                                    </ul>
+
+                                </li>
+
+                                <li>
+                                    General Secretary -
+                                    Prof.Dr.NHM Abu Bakar -
+                                    Islam
+                                </li>
+                                <li>
+                                    Assistant General Secretary
+                                    <ul>
+                                        <li> Mr. Dilip Barua -
+                                            Buddhism
+                                        </li>
+                                        <li>
+                                            Mr. Rahim Sarwar -
+                                            Bahai Faith
+                                        </li>
+                                    </ul>
+
+                                </li>
+
+                                <li>Treasurer -
+                                    Mr. Kanchan Barua -
+                                    Buddhism
+                                </li>
+
+
+                                <li> Organizing Secretary -
+                                    Mr. Ahamed Selim Reza -
+                                    Islam
+                                </li>
+
+
+                                <li> Office Secretary -
+                                    Mr. Ambrose Gomes -
+                                    Christianity
+                                </li>
+
+
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- The App Section -->
+                <div class="container">
+                    <div class="row">
+                        <div class="column-66">
+                            {#      <h1 class="xlarge-font"><b>The App</b></h1>#}
+                            {#      <h1 class="large-font" style="color:MediumSeaGreen;"><b>Why buy it?</b></h1>#}
+                            {#      <p><span style="font-size:36px">Take photos like a pro.</span> You should buy this app because lorem ipsum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>#}
+                            {#      <button class="button">Download Application</button>#}
+                            <ol>
+                                <li>Prof.Dr.Rasheda Khanam
+                                    - Islam
+                                </li>
+                                <li>Eng. Dipak Kisha
+                                    - Buddhism(Tribal)
+                                </li>
+                                <li>Dr.Aung Tha Loo
+                                    - Buddhism(Tribal)
+                                </li>
+                                <li>Principal Kyaw Thing Aung
+                                    - Buddhism (Rakhine)
+                                </li>
+                                <li>Mr. Robert Gomes
+                                    - Christianity
+                                </li>
+                                <li>Adv.Shafiqul Rahman
+                                    - Islam
+                                </li>
+                                <li>Prof.Dr.Mohammad Kamrul Ahsan
+                                    - Islam
+                                </li>
+                                <li>Dr.Prodip Roy
+                                    -Hinduism
+                                </li>
+                                <li>Mrs.Ayesha Jabin
+                                    - Islam
+                                </li>
+                                {#To be co-opted#}
+                                {##}
+                                {##}
+                                {#To be co-opted#}
+                                {##}
+
+
+                            </ol>
+                        </div>
+                        <div class="column-33">
+                            {#        <img src="/w3images/img_app.jpg" width="335" height="471" >#}
+                            <h2 class="large-font" style="color:MediumSeaGreen;">Members</h2>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+{% endblock %}

@@ -29,14 +29,27 @@
                         <!--Events One Single-->
                         <div class="events-one__single">
                             <div class="events-one__img">
-                                <img src= "{% static 'assets/images/resources/events-page-img-1.jpg' %}" alt="">
-
+                                {#                                <img src= "{% static 'assets/images/resources/events-page-img-1.jpg' %}" alt="">#}
+                                <embed src="{{ report.url }}" width="370" height="396" allow="autoplay">
                                 <div class="events-one__bottom">
-                                    <h3 class="events-one__bottom-title"><a href="{{ report.get_absolute_url }}"><h5 class="reports-title">{{ report.rp_title }}</h5>
-                                             </a></h3>
+                                    <h3 class="events-one__bottom-title"><a href="{{ report.get_absolute_url }}"><h5
+                                            class="reports-title">{{ report.rp_title }}</h5>
+                                    </a></h3>
                                 </div>
                             </div>
                         </div>
+{#                        <div class="sidebar__single sidebar__tags">#}
+{#                            <h3 class="sidebar__title">Tags</h3>#}
+{#                            <div class="sidebar__tags-list">#}
+{#                                {% for tag in reports.rp_tags.all %}#}
+{#                                    <a href="{% url 'blog:report_tag' tag.slug %}"#}
+{#                                       class="link-light text-decoration-none badge bg-secondary">#}
+{#                                        {{ tag.name }}#}
+{#                                    </a>#}
+{##}
+{#                                {% endfor %}#}
+{#                            </div>#}
+{#                        </div>#}
                     </div>
                 {% endfor %}
             </div>

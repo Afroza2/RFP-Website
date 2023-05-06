@@ -10,6 +10,18 @@
             <div class="card-body" style="justify-content: center">
                 <h5 class="card-title">Posted on {{ report.date |date:"M d, Y" }}</h5>
                 <embed src="{{ report.url }}" width="640" height="480" allow="autoplay">
+                 <div class="sidebar__single sidebar__tags">
+                            <h3 class="sidebar__title">Tags</h3>
+                            <div class="sidebar__tags-list">
+                                {% for tag in report.rp_tags.all %}
+                                    <a href="{% url 'blog:report_tag' tag.slug %}"
+                                       class="link-light text-decoration-none badge bg-secondary">
+                                        {{ tag.name }}
+                                    </a>
+
+                                {% endfor %}
+                            </div>
+                        </div>
             </div>
         </div>
     </div>

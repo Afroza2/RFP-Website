@@ -12,6 +12,9 @@ from ckeditor_uploader.fields import RichTextUploadingField
 
 
 # Create your models here.
+class About(models.Model):
+    pass
+
 
 class Post(models.Model):
     STATUS_CHOICES = (
@@ -39,17 +42,21 @@ class Post(models.Model):
         return reverse('blog:details', args=[self.slug])
 
 
-#
-# class ImageList(models.Model):
-#     body_image = models.ImageField(null=True, blank=True)
-#     post = models.ForeignKey(Post, on_delete=models.CASCADE)
-#
-#
+class FC(models.Model):
+    pass
+
+
+class Video(models.Model):
+    vid_title = models.CharField(max_length=500, default='one')
+    url = models.URLField(max_length=500)
+
+
 class Report(models.Model):
     rp_title = models.CharField(max_length=500)
     slug = models.SlugField(max_length=300, unique_for_date='date')
     url = models.URLField(max_length=500)
     date = models.DateTimeField(default=timezone.now)
+    rp_tags = TaggableManager()
 
     # rp_body = models.TextField()
 
@@ -94,6 +101,8 @@ class News(models.Model):
     slug = models.SlugField(max_length=300, unique_for_date='nw_publish')
     news_author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='news_posts')
     news_body = RichTextField()
+    # news_img_w = models.PositiveIntegerField(default=270)
+    # news_img_h = models.PositiveIntegerField(default=167)
     # image_header = models.ImageField(null=True, blank=True)
 
     image_header = models.ImageField(upload_to='featured_image/%Y/%m/%d/', null=True, blank=True)  # this

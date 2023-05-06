@@ -4,9 +4,10 @@ from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from django.views.generic import ListView, DetailView, TemplateView
 from django.http import Http404
-from .models import Post, Report, News, Member, Project, Gallery
+from .models import Post, Report, News, Member, Project, Gallery, About, Video, FC
 from django.db.models import Q
 from django.views.generic.dates import YearArchiveView
+from taggit.models import Tag
 
 
 # , Report, Gallery
@@ -42,6 +43,12 @@ class NewsDetailView(DetailView):
     template_name = 'blog/news_detail.html'
 
 
+class AboutDetail(ListView):
+    model = About
+    context_object_name = 'about'
+    template_name = 'blog/about.html'
+
+
 class Home(ListView):
     model = Post
     context_object_name = 'home'
@@ -49,8 +56,10 @@ class Home(ListView):
 
     def get_context_data(self, *, object_list=None, **kwargs):
         data = super().get_context_data(**kwargs)
-        data['news_data_home'] = News.objects.all()
+        data['news_data_home1'] = News.objects.all()
+        data['news_data_home2'] = News.objects.all()[1:4]
         data['photo_home'] = Gallery.objects.all()
+        data['video_home'] = Video.objects.all()
         return data
 
     # def get_context_data(self, *, object_list=None, **kwargs):
@@ -69,6 +78,11 @@ class ReportListView(ListView):
     model = Report
     context_object_name = 'reports'
     template_name = 'blog/report_list.html'
+
+    # def get_context_data(self, *, object_list=None, **kwargs):
+    #     data = super().get_context_data(**kwargs)
+    #     data['report_tags'] = Report.objects.all().filter(rp_tags='')
+    #     return data
 
 
 class ReportYearArchiveView(YearArchiveView):
@@ -108,6 +122,16 @@ class PhotoGallery(ListView):
     template_name = 'blog/photo.html'
 
 
+class VideoGallery(ListView):
+    model = Video
+    context_object_name = 'video'
+    template_name = 'blog/video.html'
+
+
+class FCListView(ListView):
+    model = FC
+    context_object_name = 'former_committee'
+    template_name = 'blog/fcommitte.html'
 
 
 class ProjectListView(ListView):

@@ -2,7 +2,7 @@ from django.contrib import admin
 
 # Register your models here.
 
-from .models import Post, Report, News, Member, Project, Gallery
+from .models import Post, Report, News, Member, Project, Gallery, Video
 
 
 # from markdownx.admin import MarkdownxModelAdmin
@@ -43,6 +43,13 @@ class ReportAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Report, ReportAdmin)
+
+
+class VideoAdmin(admin.ModelAdmin):
+    list_display = ('vid_title', 'url')
+
+
+admin.site.register(Video, VideoAdmin)
 
 
 #

@@ -20,6 +20,27 @@
             height: 100%;
             border: none;
         }
+        .aspect-ratio-box {
+  position: relative;
+}
+
+/* Create a pseudo element that uses padding-bottom to take up space */
+.aspect-ratio-box::after {
+  display: block;
+  content: '';
+  /* 16:9 aspect ratio,  9 / 16 * 100% = 56.25*/
+  padding-bottom: 56.25%;
+}
+
+/* Image is positioned absolutely relative to the parent element */
+.aspect-ratio-box img {
+  /* Image should match parent box size */
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
     </style>
 
     <div class="stricky-header stricked-menu main-menu">
@@ -154,7 +175,7 @@
                             upholds the preambles, the principles and goals of the organization to ensure a happy state
                             of religious tolerance and communal harmony through multi-religious cooperation.</p>
 
-                        <a href="about.html" class="welcome-one__btn thm-btn"><i class="fas fa-arrow-circle-right"></i>Learn
+                        <a href="/about" class="welcome-one__btn thm-btn"><i class="fas fa-arrow-circle-right"></i>Learn
                             More</a>
                     </div>
                 </div>
@@ -259,14 +280,14 @@
             </div>
             <div class="row">
                 <div class="col-xl-6 col-lg-6">
-                    {% with  news_data_home.all|first as f_news %}
+                    {% with  news_data_home1.all|first as f_news %}
                         {% if f_news %}
                             <div class="news-one__left">
                                 <div class="news-one__img">
 
                                     {#<img src={% static "assets/images/blog/news-one-img-1.jpg" %} alt="">#}
 
-                                    <img src={{ f_news.image_header.url }} alt="{{ news.news_title }}">
+                                    <img src={{ f_news.image_header.url }} alt="{{ news.news_title }}" width="570" height="383">
 
                                     <a href={{ f_news.get_absolute_url }}>
                                         <i class="fa fa-plus"></i>
@@ -287,65 +308,65 @@
                     {% endwith %}
                 </div>
                 <div class="col-xl-6 col-lg-6">
-                    {#                    {% for news1 in news_data_home.all|slice:"1:" %}#}
-                    {#                        {% with news_data_home.all|slice:"1:" %}#}
-                    {#                        <div class="news-one__right">#}
-                    {#                            <div class="news-one__right-single">#}
-                    {##}
-                    {#                                <div class="news-one__right-img">#}
-                    {#                                    <img src=src={{ news1.image_header.url }} alt="{{ news1.news_title }}"#}
-                    {#                                         width="270" height="167">#}
-                    {##}
-                    {#                                    <a href={{ news1.get_absolute_url }}>#}
-                    {#                                        <i class="fa fa-plus"></i>#}
-                    {#                                    </a>#}
-                    {#                                </div>#}
-                    {#                                <div class="news-one__right-content"><br/>#}
-                    {#                                    <ul class="list-unstyled news-one__right-meta">#}
-                    {#                                        <li>{{ news1.nw_publish|date:"M d, Y" }}</li>#}
-                    {#                                        <li><span>/</span></li>#}
-                    {#                                        <li><i class="far fa-user-circle"></i> {{ news1.news_author }}</li>#}
-                    {##}
-                    {#                                    </ul>#}
-                    {#                                    <h3 class="news-one__right-title">#}
-                    {#                                        <a href={{ news1.get_absolute_url }}>{{ news1.news_title }}</a>#}
-                    {#                                    </h3>#}
-                    {#                                </div>#}
-                    {##}
-                    {##}
-                    {#                            </div>#}
-                    {#                        </div>#}
-                    {#                    {% endfor %}#}
-                    {% with news_data_home.all|slice:"1:" as f1 %}
-                        {% if f1 %}
-                            <div class="news-one__right">
-                                <div class="news-one__right-single">
+                    {% for news1 in news_data_home2.all %}
 
-                                    <div class="news-one__right-img">
-                                        <img src={{ f1.image_header.url }} alt="{{ f1.news_title }}"
-                                             width="270" height="167">
+                        <div class="news-one__right">
+                            <div class="news-one__right-single">
 
-                                        <a href={{ f1.get_absolute_url }}>
-                                            <i class="fa fa-plus"></i>
-                                        </a>
+                                <div class="news-one__right-img">
+                                    <div class="aspect-ratio-box">
+                                    <img src={{ news1.image_header.url }} alt="{{ news1.news_title }}"  >
                                     </div>
-                                    <div class="news-one__right-content"><br/>
-                                        <ul class="list-unstyled news-one__right-meta">
-                                            <li>{{ f1.nw_publish|date:"M d, Y" }}</li>
-                                            <li><span>/</span></li>
-                                            <li><i class="far fa-user-circle"></i> {{ f1.news_author }}</li>
-
-                                        </ul>
-                                        <h3 class="news-one__right-title">
-                                            <a href={{ f1.get_absolute_url }}>{{ f1.news_title }}</a>
-                                        </h3>
-                                    </div>
-
-
+                                    <a href={{ news1.get_absolute_url }}>
+                                        <i class="fa fa-plus"></i>
+                                    </a>
                                 </div>
+                                <div class="news-one__right-content"><br/>
+                                    <ul class="list-unstyled news-one__right-meta">
+                                        <li>{{ news1.nw_publish|date:"M d, Y" }}</li>
+                                        <li><span>/</span></li>
+                                        <li><i class="far fa-user-circle"></i> {{ news1.news_author }}</li>
+
+                                    </ul>
+                                    <h3 class="news-one__right-title">
+                                        <a href={{ news1.get_absolute_url }}>{{ news1.news_title }}</a>
+                                    </h3>
+                                </div>
+
+
                             </div>
-                        {% endif %}
-                    {% endwith %}
+                        </div>
+                    {% endfor %}
+{#                    {% with news_data_home2.all as f1 %}#}
+{#                        {% if f1 %}#}
+{#                            <div class="news-one__right">#}
+{#                                <div class="news-one__right-single">#}
+{##}
+{#                                    <div class="news-one__right-img">#}
+{#                                        <img src={{ f1.image_header.url }} alt="{{ f1.news_title }}"#}
+{#                                             width="270" height="167">#}
+{##}
+{#                                        <a href={{ f1.get_absolute_url }}>#}
+{#                                            <i class="fa fa-plus"></i>#}
+{#                                        </a>#}
+{#                                    </div>#}
+{#                                    <div class="news-one__right-content"><br/>#}
+{#                                        <ul class="list-unstyled news-one__right-meta">#}
+{#                                            <li>{{ f1.nw_publish|date:"M d, Y" }}</li>#}
+{#                                            <li><span>/</span></li>#}
+{#                                            <li><i class="far fa-user-circle"></i> {{ f1.news_author }}</li>#}
+{##}
+{#                                        </ul>#}
+{#                                        <h3 class="news-one__right-title">#}
+{#                                            <a href={{ f1.get_absolute_url }}>{{ f1.news_title }}</a>#}
+{#                                        </h3>#}
+{#                                    </div>#}
+{##}
+{##}
+{#                                </div>#}
+{#                            </div>#}
+{#                        {% endif %}#}
+{#                    {% endwith %}#}
                 </div>
             </div>
         </div>
@@ -374,12 +395,12 @@
 
                             {#                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/O_hApABXKaw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen#}
                             {#                            ></iframe>#}
-
+{% for v in  video_home.all%}
                             <div style=" position: relative;
                                               width: 100%;
                                               overflow: hidden;
                                               padding-top: 100%;">
-                                <iframe style="position: absolute;
+                                <embed style="position: absolute;
                                                   top: 0;
                                                   left: 0;
                                                   bottom: 0;
@@ -387,9 +408,10 @@
                                                   width: 100%;
                                                   height: 100%;
                                                   border: none;"
-                                        src="https://www.youtube.com/embed/O_hApABXKaw"></iframe>
+                                        src={{ v.url }}></embed>
                             </div>
                             {#                            <p class="help-them__top-video-text">Watch the Video</p>#}
+                            {% endfor %}
                         </div>
                     </div>
                 </div>
@@ -747,7 +769,7 @@
             </div>
             <div class="gallery-one__carousel owl-theme owl-carousel">
                 <!--Gallery One Single-->
-            meow
+
                 {% for g in photo_home %}
                     <div class="gallery-one__single">
                         <div class="gallery-one__img-box">

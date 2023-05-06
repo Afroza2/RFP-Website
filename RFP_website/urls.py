@@ -25,11 +25,12 @@ urlpatterns = [
 
                   path('projects/', include('blog.urls', namespace='project')),
                   path('photo-gallery/', include('blog.urls', namespace='gallery')),
+                  path('video-gallery/', include('blog.urls', namespace='video')),
                   path('reports/', include('blog.urls', namespace='report')),
-
                   path('members/', include('blog.urls', namespace='members')),
                   path('news/', include('blog.urls', namespace='news')),
                   path('blognews/', include('blog.urls', namespace='blognews')),
                   path('contact/', include('blog.urls', namespace='contact')),
+                  path('former-committee/', include('blog.urls', namespace='committee')),
 
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
