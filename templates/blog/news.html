@@ -21,11 +21,15 @@
     </section>
 
     <section class="news-page">
-        {% if tag %}
-            <h2 class="mb-3">Posts tagged with "{{ tag.name }}"</h2>
-        {% endif %}
+{#        {% if tag %}#}
+{#            <h2 class="mb-3">Posts tagged with "{{ tag.name }}"</h2>#}
+{#        {% endif %}#}
         <div class="container">
-
+            <div>
+                {% for tag in news_tags %}
+                    <a href="{% url 'blog:post_tag' tag.slug %}">{{ tag.name }}</a>
+                {% endfor %}
+            </div>
             <div class="row">
                 {% for news in newss %}
                     <div class="col-lg-4 wow fadeInUp" data-wow-delay="100ms">
@@ -59,6 +63,19 @@
                                 </h3>
                                 <p class="news-two__text">{{ news.news_body | truncatechars:110 | safe }}</p>
                             </div>
+
+                            <div class="sidebar__single sidebar__tags">
+                                <h3 class="sidebar__title">Tags</h3>
+                                <div class="sidebar__tags-list">
+                                    {% for tag in news.tags.all %}
+                                        <a href="{% url 'blog:post_tag' tag.slug %}"
+                                           class="link-light text-decoration-none badge bg-secondary">
+                                            {{ tag }}
+                                        </a>
+                                        <!-- {% if not forloop.last %}, {% endif %} -->
+                                    {% endfor %}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 {% endfor %}
@@ -66,20 +83,7 @@
 
         </div>
 
-        <div class="sidebar__single sidebar__tags">
-            <h3 class="sidebar__title">Popular Tags</h3>
-            <p>meow</p>
-{#            <div class="sidebar__tags-list">#}
-{#                {% for tag in news.news_tags %}#}
-{#                    <a href="{% url 'blog:post_tag' tag.slug %}"#}
-{#                       class="link-light text-decoration-none badge bg-secondary">#}
-{#                        {{ tag.name }}#}
-{#                    </a>#}
-{#                    <!-- {% if not forloop.last %}, {% endif %} -->#}
-{#                {% endfor %}#}
-{##}
-{#            </div>#}
-        </div>
+
     </section>
 
 {% endblock %}

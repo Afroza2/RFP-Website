@@ -126,19 +126,13 @@
                             <div class="sidebar__single sidebar__tags">
                                 <h3 class="sidebar__title">Tags</h3>
                                 <div class="sidebar__tags-list">
-                                    {% for tag in news.news_tags.all %}
+                                    {% for tag in news.tags.all %}
                                         <a href="{% url 'blog:post_tag' tag.slug %}"
                                            class="link-light text-decoration-none badge bg-secondary">
                                             {{ tag.name }}
                                         </a>
                                         <!-- {% if not forloop.last %}, {% endif %} -->
                                     {% endfor %}
-
-                                    {#                                    <a href="#">Donation</a>#}
-                                    {#                                    <a href="#">Charity</a>#}
-                                    {#                                    <a href="#">Poor</a>#}
-                                    {#                                    <a href="#">Education</a>#}
-                                    {#                                    <a href="#">Fundraising</a>#}
                                 </div>
                             </div>
                         </div>

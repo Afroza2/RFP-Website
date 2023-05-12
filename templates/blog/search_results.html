@@ -6,13 +6,18 @@
 
     <!-- templates/search_results.html -->
 
-<h1>Search Results</h1>
-<ul>
-  {% for news in results %}
-    <li>
-      {{ news }}
-    </li>
-  {% endfor %}
-</ul>
+    <h1>Search Results</h1>
+    <ul>
+        {% for q1 in results %}
+            <li>
+                <a href="{{ news.get_absolute_url }}">
+                    {{ q1 }}
+                </a>
+            </li>
+
+        {% endfor %}
+
+    </ul>
+
 
 {% endblock %}

@@ -56,7 +56,7 @@ class Report(models.Model):
     slug = models.SlugField(max_length=300, unique_for_date='date')
     url = models.URLField(max_length=500)
     date = models.DateTimeField(default=timezone.now)
-    rp_tags = TaggableManager()
+    tags = TaggableManager()
 
     # rp_body = models.TextField()
 
@@ -109,7 +109,7 @@ class News(models.Model):
 
     nw_publish = models.DateTimeField(default=timezone.now)
     nw_status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='draft')
-    news_tags = TaggableManager()
+    tags = TaggableManager()
 
     def __unicode__(self):
         return '%name' % {'name': self.news_title}

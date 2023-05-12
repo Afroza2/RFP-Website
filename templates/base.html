@@ -2,7 +2,8 @@
 {% load static %}
 <html lang="en">
 <head>
-    <meta charset="UTF-8"/>    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>RFP BD</title>
     <!-- favicons Icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="{% static 'assets/images/favicons/apple-touch-icon.png' %}"/>
@@ -99,7 +100,7 @@
                             </li>
                             <li class="dropdown">
                                 <a>What we do</a>
-                                 <ul>
+                                <ul>
                                     <li><a href="/assembly">Assembly</a></li>
                                     <li><a href="/projects">Projects</a></li>
                                     <li><a href="/events">Events and Dialogue</a></li>
@@ -115,37 +116,41 @@
                                 <a>Resources</a>
                                 <ul>
                                     <li><a href="/reports">Reports</a></li>
-{#                                    <li><a href="https://www.rfp.org/where-we-work/">Former Committee List</a></li>#}
-                                      <li><a href="/former-committee">Former Committee List</a></li>
+                                    {#                                    <li><a href="https://www.rfp.org/where-we-work/">Former Committee List</a></li>#}
+                                    <li><a href="/former-committee">Former Committee List</a></li>
                                     <li><a href="/photo-gallery">Photo</a></li>
                                     <li><a href="/video-gallery">Video</a></li>
-{#                                    <li><a href="#">Archives</a></li>#}
+                                    {#                                    <li><a href="#">Archives</a></li>#}
                                 </ul>
                             </li>
                             <li><a href="/contact">Contact</a></li>
                         </ul>
                         <div class="main-menu__right">
-{#                            <a href="#" class="main-menu__search search-toggler icon-magnifying-glass"></a>#}
+                            <a href="{% url 'blog:home' %}"
+                               class="main-menu__search search-toggler icon-magnifying-glass"></a>
 
-{#                            <form action="{% url 'blog:search' %}" method="get">#}
-{##}
-{#                                    <input class="main-menu__search search-toggler icon-magnifying-glass" name="q" type="text" placeholder="Search...">#}
-{##}
-{#                            </form>#}
-{#                            <a href="#" class="main-menu__cart icon-shopping-cart  "></a>#}
-                            <div class="main-menu__phone-contact">
-                                <div class="main-menu__phone-icon">
-                                    <span class="icon-chat"></span>
-                                </div>
-                                {#                                    <div class="main-menu__phone-number">#}
-                                {#                                        <p>Call Anytime</p>#}
-                                {#                                        <a href="tel:92 666 888 0000">92 666 888 0000</a>#}
-                                {#                                    </div>#}
-                            </div>
-{#                            <a href="causes-details.html" class="main-menu__donate-btn"><i class="fa fa-heart"></i>Donate#}
-{#                            </a>#}
                         </div>
+
+                        <div class="search-popup">
+                            <div class="search-popup__overlay search-toggler"></div>
+                            <!-- /.search-popup__overlay -->
+                            <div class="search-popup__content">
+                                <form method="GET" action="{% url 'blog:search' %}">
+                                    <label for="search" class="sr-only">search here</label><!-- /.sr-only -->
+                                    <input type="text" id="search" placeholder="Search Here..." name="q"
+                                           value="{{ request.GET.q }}"/>
+                                    <button type="submit" aria-label="search submit" class="thm-btn">
+                                        <i class="icon-magnifying-glass"></i>
+                                    </button>
+                                </form>
+                            </div>
+                            <!-- /.search-popup__content -->
+                        </div>
+
+
+
                     </div>
+
                 </nav>
             </div>
         </div>
@@ -159,8 +164,9 @@
             <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
 
             <div class="logo-box">
-                <a href="/" aria-label="logo image"><img src='{% static "assets/images/resources/logo-1.png"%}' width="155"
-                                                                  alt=""/></a>
+                <a href="/" aria-label="logo image"><img src='{% static "assets/images/resources/logo-1.png" %}'
+                                                         width="155"
+                                                         alt=""/></a>
             </div>
             <!-- /.logo-box -->
             <div class="mobile-nav__container"></div>
@@ -189,7 +195,10 @@
 
         </div>
         <!-- /.mobile-nav__content -->
+
+
     </div>
+
     <!-- /.mobile-nav__wrapper -->
     <div class="container my-4">
         {% block container %}
@@ -198,17 +207,18 @@
 
     <!--Site Footer One Start-->
     <footer class="site-footer">
-        <div class="site-footer-bg" style="background-image: url('{% static "assets/images/backgrounds/footer-bg.jpg" %}')"></div>
+        <div class="site-footer-bg"
+             style="background-image: url('{% static "assets/images/backgrounds/footer-bg.jpg" %}')"></div>
         <div class="container">
             <div class="site-footer__top">
                 <div class="row">
                     <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
-{#                        <div class="footer-widget__column footer-widget__about">#}
-{#                            <h3 class="footer-widget__title">About</h3>#}
-{#                            <p class="footer-widget__text">Lorem ipsum dolor sit ame consect etur pisicing elit sed#}
-{#                                do eiusmod tempor incididunt ut labore.</p>#}
-{#                            <a href="#" class="footer-widget__about-btn"><i class="fa fa-heart"></i>Donate </a>#}
-{#                        </div>#}
+                        {#                        <div class="footer-widget__column footer-widget__about">#}
+                        {#                            <h3 class="footer-widget__title">About</h3>#}
+                        {#                            <p class="footer-widget__text">Lorem ipsum dolor sit ame consect etur pisicing elit sed#}
+                        {#                                do eiusmod tempor incididunt ut labore.</p>#}
+                        {#                            <a href="#" class="footer-widget__about-btn"><i class="fa fa-heart"></i>Donate </a>#}
+                        {#                        </div>#}
                     </div>
                     <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
                         <div class="footer-widget__column footer-widget__explore clearfix">
@@ -217,8 +227,8 @@
 
                                 <li><a href="/leadership">National Leadership</a></li>
                                 <li><a href="/reports">Resources</a></li>
-{#                                <li><a href="https://www.flickr.com/photos/religionsforpeace/albums" target="_blank">Photo#}
-{#                                    Library</a></li>#}
+                                {#                                <li><a href="https://www.flickr.com/photos/religionsforpeace/albums" target="_blank">Photo#}
+                                {#                                    Library</a></li>#}
                                 <li><a href="/contact">Contact</a></li>
                             </ul>
                             {#                            <ul class="footer-widget__explore-list footer-widget__explore-list-two list-unstyled">#}
@@ -233,17 +243,17 @@
                         <div class="footer-widget__column footer-widget__contact">
                             <h3 class="footer-widget__title">Contact</h3>
                             <ul class="list-unstyled footer-widget__contact-list">
-{#                                <li>#}
-{#                                    <div class="icon">#}
-{#                                        <i class="icon-chat"></i>#}
-{#                                    </div>#}
-{#                                    <div class="text">#}
-{#                                        <p>#}
-{#                                            <span>Call Anytime</span>#}
-{#                                            <a href="tel:92 666 888 0000">92 666 888 0000</a>#}
-{#                                        </p>#}
-{#                                    </div>#}
-{#                                </li>#}
+                                {#                                <li>#}
+                                {#                                    <div class="icon">#}
+                                {#                                        <i class="icon-chat"></i>#}
+                                {#                                    </div>#}
+                                {#                                    <div class="text">#}
+                                {#                                        <p>#}
+                                {#                                            <span>Call Anytime</span>#}
+                                {#                                            <a href="tel:92 666 888 0000">92 666 888 0000</a>#}
+                                {#                                        </p>#}
+                                {#                                    </div>#}
+                                {#                                </li>#}
                                 <li>
                                     <div class="icon">
                                         <i class="icon-message"></i>

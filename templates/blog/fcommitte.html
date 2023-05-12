@@ -2,14 +2,14 @@
 {% load static %}
 {% block container %}
     <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-        }
+        {#* {#}
+        {#    box-sizing: border-box;#}
+        {#}#}
+        {##}
+        {#body {#}
+        {#    margin: 0;#}
+        {#    font-family: Arial, Helvetica, sans-serif;#}
+        {#}#}
 
         .container {
             padding: 64px;
@@ -34,11 +34,11 @@
         }
 
         .large-font {
-            font-size: 48px;
+            font-size: 40px;
         }
 
         .xlarge-font {
-            font-size: 64px
+            font-size: 60px
         }
 
         .button {
@@ -67,6 +67,19 @@
                 margin: auto;
             }
         }
+
+        {#@media screen and (min-width: 200px) {#}
+        {#    .column-66,#}
+        {#    .column-33 {#}
+        {#        width: 100%;#}
+        {#        text-align: center;#}
+        {#        padding: 10px;#}
+        {#    }#}
+        {##}
+        {#    img {#}
+        {#        margin: auto;#}
+        {#    }#}
+        {#}#}
     </style>
     <div class="stricky-header stricked-menu main-menu">
         <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
@@ -114,7 +127,7 @@ Islam
                         </div>
                         <div class="column-33">
 {#                            <img src="/w3images/img_app.jpg" width="335" height="471">#}
-                             <h2 class="large-font" style="color:MediumSeaGreen;"><b>Advisor</b></h2>
+                             <h2 class="large-font" style="color:#15c8a0;"><b>Advisor</b></h2>
                         </div>
                     </div>
                 </div>
@@ -124,7 +137,7 @@ Islam
                     <div class="row">
                         <div class="column-33">
                             {#                            <img src="/w3images/app5.jpg" alt="App" width="335" height="471">#}
-                            <h2 class="large-font" style="color:MediumSeaGreen;"><b>Executive Committee</b></h2>
+                            <h2 class="large-font" style="color:#15c8a0;"><b>Executive Committee</b></h2>
                         </div>
                         <div class="column-66">
                             {#                            <h1 class="xlarge-font"><b>Clarity</b></h1>#}
@@ -249,7 +262,7 @@ Islam
                         </div>
                         <div class="column-33">
                             {#        <img src="/w3images/img_app.jpg" width="335" height="471" >#}
-                            <h2 class="large-font" style="color:MediumSeaGreen;">Members</h2>
+                            <h2 class="large-font" style="color:#15c8a0;">Members</h2>
                         </div>
                     </div>
                 </div>

@@ -38,18 +38,18 @@
                                 </div>
                             </div>
                         </div>
-{#                        <div class="sidebar__single sidebar__tags">#}
-{#                            <h3 class="sidebar__title">Tags</h3>#}
-{#                            <div class="sidebar__tags-list">#}
-{#                                {% for tag in reports.rp_tags.all %}#}
-{#                                    <a href="{% url 'blog:report_tag' tag.slug %}"#}
-{#                                       class="link-light text-decoration-none badge bg-secondary">#}
-{#                                        {{ tag.name }}#}
-{#                                    </a>#}
-{##}
-{#                                {% endfor %}#}
-{#                            </div>#}
-{#                        </div>#}
+                        <div class="sidebar__single sidebar__tags">
+                            <h3 class="sidebar__title">Tags</h3>
+                            <div class="sidebar__tags-list">
+                                {% for tag in report.tags.all %}
+                                    <a href="{% url 'blog:report_tag' tag.slug %}"
+                                       class="link-light text-decoration-none badge bg-secondary">
+                                        {{ tag.name }}
+                                    </a>
+
+                                {% endfor %}
+                            </div>
+                        </div>
                     </div>
                 {% endfor %}
             </div>

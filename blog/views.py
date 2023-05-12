@@ -11,29 +11,42 @@ from taggit.models import Tag
 
 
 # , Report, Gallery
+
+class TagMixin(object):
+    def get_context_data(self, **kwargs):
+        data = super(TagMixin, self).get_context_data(**kwargs)
+        data['news_tags'] = Tag.objects.all()
+        return data
+
+
 class NewsListView(ListView):
     model = News
+    queryset = News.objects.all()
     context_object_name = 'newss'
     template_name = 'blog/news.html'
 
 
+class NewsTagView(ListView):
+    model = News
+    context_object_name = 'newss'
+    template_name = 'blog/news.html'
+
+    def get_queryset(self):
+        return News.objects.filter(tags__slug=self.kwargs.get('tag_slug'))
+
+
 class SearchView(TemplateView):
     template_name = 'blog/search_results.html'
-    model = News
-
-    # def get_queryset(self):
-    #     name = self.kwargs.get('name', '')
-    #     object_list = self.model.objects.all()
-    #     if name:
-    #         object_list = object_list.filter(name__icontains=name)
-    #     return object_list
+    model = News, Report, Project
 
     def get(self, request, *args, **kwargs):
         q = request.GET.get('q', '')
-        self.results = News.objects.filter(news_title__icontains=q)
+        self.results = (News.objects.filter(news_title__icontains=q) or
+                        Report.objects.filter(rp_title__icontains=q) or Project.objects.filter(pr_title__icontains=q))
         return super().get(request, *args, **kwargs)
 
     def get_context_data(self, **kwargs):
+        # print("result", super().get_context_data(results=zip(self.news_results, self.rp_results)))
         return super().get_context_data(results=self.results, **kwargs)
 
 
@@ -54,12 +67,24 @@ class Home(ListView):
     context_object_name = 'home'
     template_name = 'blog/home.html'
 
+    # def get_queryset(self):
+    #     q = self.request.GET.get('q')
+    #     if q:
+    #         object_list = News.objects.filter(
+    #             Q(news_title__icontains=q)
+    #         )
+    #     else:
+    #         object_list = News.objects.all()
+    #
+    #     return object_list
+
     def get_context_data(self, *, object_list=None, **kwargs):
         data = super().get_context_data(**kwargs)
         data['news_data_home1'] = News.objects.all()
         data['news_data_home2'] = News.objects.all()[1:4]
         data['photo_home'] = Gallery.objects.all()
         data['video_home'] = Video.objects.all()
+        data['home_post'] = Post.objects.all()
         return data
 
     # def get_context_data(self, *, object_list=None, **kwargs):
@@ -76,13 +101,19 @@ class HomeDetail(generic.DetailView):
 
 class ReportListView(ListView):
     model = Report
+    queryset = Report.objects.all()
     context_object_name = 'reports'
     template_name = 'blog/report_list.html'
 
-    # def get_context_data(self, *, object_list=None, **kwargs):
-    #     data = super().get_context_data(**kwargs)
-    #     data['report_tags'] = Report.objects.all().filter(rp_tags='')
-    #     return data
+
+class ReportTagView(ListView):
+    model = Report
+    context_object_name = 'reports'
+    template_name = 'blog/report_list.html'
+
+    def get_queryset(self):
+        return Report.objects.filter(tags__slug=self.kwargs.get('tag_slug'))
+        # return Report.objects.filter(tags__name__in=[self.kwargs['tag']])
 
 
 class ReportYearArchiveView(YearArchiveView):
