@@ -10,7 +10,7 @@
     <ul>
         {% for q1 in results %}
             <li>
-                <a href="{{ news.get_absolute_url }}">
+                <a href="{{ q1.get_absolute_url }}">
                     {{ q1 }}
                 </a>
             </li>

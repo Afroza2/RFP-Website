@@ -1,3 +1,4 @@
+from django.db.models.functions import ExtractYear, TruncMonth
 from django.shortcuts import render, get_object_or_404
 
 # Create your views here.
@@ -5,7 +6,7 @@ from django.views import generic
 from django.views.generic import ListView, DetailView, TemplateView
 from django.http import Http404
 from .models import Post, Report, News, Member, Project, Gallery, About, Video, FC
-from django.db.models import Q
+from django.db.models import Q, Count
 from django.views.generic.dates import YearArchiveView
 from taggit.models import Tag
 
@@ -15,24 +16,66 @@ from taggit.models import Tag
 class TagMixin(object):
     def get_context_data(self, **kwargs):
         data = super(TagMixin, self).get_context_data(**kwargs)
-        data['news_tags'] = Tag.objects.all()
+        data['tags'] = Tag.objects.all()
         return data
 
 
-class NewsListView(ListView):
+class NewsListView(TagMixin, ListView):
     model = News
     queryset = News.objects.all()
     context_object_name = 'newss'
     template_name = 'blog/news.html'
 
 
-class NewsTagView(ListView):
+class NewsDetailView(TagMixin, DetailView):
+    model = News
+    date_field = "nw_publish"
+    context_object_name = 'news'
+    template_name = 'blog/news_detail.html'
+
+    def get_context_data(self, *, object_list=None, **kwargs):
+        data = super().get_context_data(**kwargs)
+        data['news_details_view'] = News.objects.all()
+        data['news_years'] = News.objects.annotate(year=ExtractYear('nw_publish')).values('year').annotate(
+            total_entries=Count('year')).order_by()
+        # .annotate(sum=Sum('news_title')).values('year', 'sum')
+        data['news_years'] = (
+            News.objects.values(month=TruncMonth('nw_publish'))
+                .annotate(total_entries=Count('month'))
+                .order_by()
+        )
+        return data
+
+
+class NewsMonths(ListView):
+    model = News
+    # context_object_name = 'posts-by-month'
+    template_name = 'blog/newsarchive.html'
+
+    def get_queryset(self, *args, **kwargs):
+        return (
+            super().get_queryset(*args, **kwargs).filter(
+                nw_publish__year=self.kwargs['year'],
+                nw_publish__month=self.kwargs['month'], )
+        )
+
+
+class NewsTagView(TagMixin, ListView):
     model = News
     context_object_name = 'newss'
     template_name = 'blog/news.html'
 
     def get_queryset(self):
         return News.objects.filter(tags__slug=self.kwargs.get('tag_slug'))
+
+
+class NewsYearArchiveView(YearArchiveView):
+    context_object_name = 'news_years'
+    date_field = "nw_publish"
+    year_format = '%Y'
+    make_object_list = True
+    allow_future = True
+    queryset = News.objects.filter(nw_status='published').order_by('nw_publish', 'news_title')
 
 
 class SearchView(TemplateView):
@@ -48,12 +91,6 @@ class SearchView(TemplateView):
     def get_context_data(self, **kwargs):
         # print("result", super().get_context_data(results=zip(self.news_results, self.rp_results)))
         return super().get_context_data(results=self.results, **kwargs)
-
-
-class NewsDetailView(DetailView):
-    model = News
-    context_object_name = 'news'
-    template_name = 'blog/news_detail.html'
 
 
 class AboutDetail(ListView):

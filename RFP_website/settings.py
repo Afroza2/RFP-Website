@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'ckeditor',
     'ckeditor_uploader',
-    'taggit'
+    'taggit',
+    'imagefit'
 ]
 
 TAGGIT_CASE_INSENSITIVE = True

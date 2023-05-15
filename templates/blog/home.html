@@ -20,27 +20,28 @@
             height: 100%;
             border: none;
         }
+
         .aspect-ratio-box {
-  position: relative;
-}
+            position: relative;
+        }
 
-/* Create a pseudo element that uses padding-bottom to take up space */
-.aspect-ratio-box::after {
-  display: block;
-  content: '';
-  /* 16:9 aspect ratio,  9 / 16 * 100% = 56.25*/
-  padding-bottom: 56.25%;
-}
+        /* Create a pseudo element that uses padding-bottom to take up space */
+        .aspect-ratio-box::after {
+            display: block;
+            content: '';
+            /* 16:9 aspect ratio,  9 / 16 * 100% = 56.25*/
+            padding-bottom: 56.25%;
+        }
 
-/* Image is positioned absolutely relative to the parent element */
-.aspect-ratio-box img {
-  /* Image should match parent box size */
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-}
+        /* Image is positioned absolutely relative to the parent element */
+        .aspect-ratio-box img {
+            /* Image should match parent box size */
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+        }
     </style>
 
     <div class="stricky-header stricked-menu main-menu">
@@ -287,7 +288,8 @@
 
                                     {#<img src={% static "assets/images/blog/news-one-img-1.jpg" %} alt="">#}
 
-                                    <img src={{ f_news.image_header.url }} alt="{{ news.news_title }}" width="570" height="383">
+                                    <img src={{ f_news.image_header.url }} alt="{{ news.news_title }}" width="500"
+                                         height="500">
 
                                     <a href={{ f_news.get_absolute_url }}>
                                         <i class="fa fa-plus"></i>
@@ -308,15 +310,15 @@
                     {% endwith %}
                 </div>
                 <div class="col-xl-6 col-lg-6">
-                    {% for news1 in news_data_home2.all %}
-
-                        <div class="news-one__right">
+                    <div class="news-one__right">
+                        {% for news1 in news_data_home2.all %}
                             <div class="news-one__right-single">
 
                                 <div class="news-one__right-img">
-                                    <div class="aspect-ratio-box">
-                                    <img src={{ news1.image_header.url }} alt="{{ news1.news_title }}"  >
-                                    </div>
+
+                                    <img src={{ news1.image_header.url }} alt="{{ news1.news_title }}" width="200"
+                                         height="200">
+
                                     <a href={{ news1.get_absolute_url }}>
                                         <i class="fa fa-plus"></i>
                                     </a>
@@ -335,38 +337,39 @@
 
 
                             </div>
-                        </div>
-                    {% endfor %}
-{#                    {% with news_data_home2.all as f1 %}#}
-{#                        {% if f1 %}#}
-{#                            <div class="news-one__right">#}
-{#                                <div class="news-one__right-single">#}
-{##}
-{#                                    <div class="news-one__right-img">#}
-{#                                        <img src={{ f1.image_header.url }} alt="{{ f1.news_title }}"#}
-{#                                             width="270" height="167">#}
-{##}
-{#                                        <a href={{ f1.get_absolute_url }}>#}
-{#                                            <i class="fa fa-plus"></i>#}
-{#                                        </a>#}
-{#                                    </div>#}
-{#                                    <div class="news-one__right-content"><br/>#}
-{#                                        <ul class="list-unstyled news-one__right-meta">#}
-{#                                            <li>{{ f1.nw_publish|date:"M d, Y" }}</li>#}
-{#                                            <li><span>/</span></li>#}
-{#                                            <li><i class="far fa-user-circle"></i> {{ f1.news_author }}</li>#}
-{##}
-{#                                        </ul>#}
-{#                                        <h3 class="news-one__right-title">#}
-{#                                            <a href={{ f1.get_absolute_url }}>{{ f1.news_title }}</a>#}
-{#                                        </h3>#}
-{#                                    </div>#}
-{##}
-{##}
-{#                                </div>#}
-{#                            </div>#}
-{#                        {% endif %}#}
-{#                    {% endwith %}#}
+                        {% endfor %}
+                    </div>
+
+                    {#                    {% with news_data_home2.all as f1 %}#}
+                    {#                        {% if f1 %}#}
+                    {#                            <div class="news-one__right">#}
+                    {#                                <div class="news-one__right-single">#}
+                    {##}
+                    {#                                    <div class="news-one__right-img">#}
+                    {#                                        <img src={{ f1.image_header.url }} alt="{{ f1.news_title }}"#}
+                    {#                                             width="270" height="167">#}
+                    {##}
+                    {#                                        <a href={{ f1.get_absolute_url }}>#}
+                    {#                                            <i class="fa fa-plus"></i>#}
+                    {#                                        </a>#}
+                    {#                                    </div>#}
+                    {#                                    <div class="news-one__right-content"><br/>#}
+                    {#                                        <ul class="list-unstyled news-one__right-meta">#}
+                    {#                                            <li>{{ f1.nw_publish|date:"M d, Y" }}</li>#}
+                    {#                                            <li><span>/</span></li>#}
+                    {#                                            <li><i class="far fa-user-circle"></i> {{ f1.news_author }}</li>#}
+                    {##}
+                    {#                                        </ul>#}
+                    {#                                        <h3 class="news-one__right-title">#}
+                    {#                                            <a href={{ f1.get_absolute_url }}>{{ f1.news_title }}</a>#}
+                    {#                                        </h3>#}
+                    {#                                    </div>#}
+                    {##}
+                    {##}
+                    {#                                </div>#}
+                    {#                            </div>#}
+                    {#                        {% endif %}#}
+                    {#                    {% endwith %}#}
                 </div>
             </div>
         </div>
@@ -387,53 +390,53 @@
                         <!--Gallery page Single-->
 
                         <div class="gallery-page__single">
-                             <embed src="{{ v.url }}" alt="" width="300" height="100%">
+                            <embed src="{{ v.url }}" alt="" width="300" height="100%">
 
                         </div>
                     </div>
                 {% endfor %}
             </div>
             <div class="help-them__top">
-{#                <div class="row">#}
-                    {#                    <div class="col-xl-8 col-lg-8">#}
-                    {#                        <div class="help-them__top-content">#}
-                    {#                            <h2 class="help-them__top-content-title">Help them whenever they are in need</h2>#}
-                    {#                        </div>#}
-                    {#                    </div>#}
-{#                    <div class="col-xl-4 col-lg-4">#}
-{##}
-{#                        <div class="help-them__top-video-box">#}
-                            {#                            <a href="https://www.youtube.com/embed/O_hApABXKaw"#}
-                            {#                               class="help-them__top-video-btn video-popup"><i class="fa fa-play"></i></a>#}
-{##}
-                            {#                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/O_hApABXKaw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen#}
-                            {#                            ></iframe>#}
-{#{% for v in  video_home.all%}#}
-{#                            <div style=" position: relative;#}
-{#                                              width: 100%;#}
-{#                                              overflow: hidden;#}
-{#                                              padding-top: 100%;">#}
-{#                                <embed style="position: absolute;#}
-{#                                                  top: 0;#}
-{#                                                  left: 0;#}
-{#                                                  bottom: 0;#}
-{#                                                  right: 0;#}
-{#                                                  width: 100%;#}
-{#                                                  height: 100%;#}
-{#                                                  border: none;"#}
-{#                                        src={{ v.url }}/>#}
-{#                            </div>#}
-                            {#                            <p class="help-them__top-video-text">Watch the Video</p>#}
-{#                            {% endfor %}#}
-                        </div>
-                    </div>
-                </div>
+                {#                <div class="row">#}
+                {#                    <div class="col-xl-8 col-lg-8">#}
+                {#                        <div class="help-them__top-content">#}
+                {#                            <h2 class="help-them__top-content-title">Help them whenever they are in need</h2>#}
+                {#                        </div>#}
+                {#                    </div>#}
+                {#                    <div class="col-xl-4 col-lg-4">#}
+                {##}
+                {#                        <div class="help-them__top-video-box">#}
+                {#                            <a href="https://www.youtube.com/embed/O_hApABXKaw"#}
+                {#                               class="help-them__top-video-btn video-popup"><i class="fa fa-play"></i></a>#}
+                {##}
+                {#                            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/O_hApABXKaw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen#}
+                {#                            ></iframe>#}
+                {#{% for v in  video_home.all%}#}
+                {#                            <div style=" position: relative;#}
+                {#                                              width: 100%;#}
+                {#                                              overflow: hidden;#}
+                {#                                              padding-top: 100%;">#}
+                {#                                <embed style="position: absolute;#}
+                {#                                                  top: 0;#}
+                {#                                                  left: 0;#}
+                {#                                                  bottom: 0;#}
+                {#                                                  right: 0;#}
+                {#                                                  width: 100%;#}
+                {#                                                  height: 100%;#}
+                {#                                                  border: none;"#}
+                {#                                        src={{ v.url }}/>#}
+                {#                            </div>#}
+                {#                            <p class="help-them__top-video-text">Watch the Video</p>#}
+                {#                            {% endfor %}#}
             </div>
-            {#            <div class="help-them__bottom">#}
-            {#                <div class="row">#}
-            {#                 #}
-            {#                </div>#}
-            {#            </div>#}
+        </div>
+        </div>
+        </div>
+        {#            <div class="help-them__bottom">#}
+        {#                <div class="row">#}
+        {#                 #}
+        {#                </div>#}
+        {#            </div>#}
         </div>
         </div>
     </section>
