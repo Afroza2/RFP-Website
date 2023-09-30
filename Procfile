@@ -1,1 +1,1 @@
-web: gunicorn 'RFP-Website.wsgi'
+web: gunicorn 'RFP_Website.wsgi'
