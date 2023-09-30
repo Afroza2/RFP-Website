@@ -24,7 +24,7 @@ SECRET_KEY = 'django-insecure-%7+4=7n_zp4fc=h!*!vu--ve^9wx=iv$u8l%kn_bl9)e27kix*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOST = ['*']
 
 # Application definition
 
@@ -129,9 +129,12 @@ USE_TZ = True
 # import mimetypes
 #
 # mimetypes.add_type("text/css", ".css", True)
+import os
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / "static"]
-STATIC_ROOT = BASE_DIR / "staticfiles"
+# STATICFILES_DIRS = [BASE_DIR / "static"]
+# STATIC_ROOT = BASE_DIR / "staticfiles"
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATIC_ROOT =os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage"  # new
 
 # Default primary key field type
