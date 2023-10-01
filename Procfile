@@ -1,1 +1,1 @@
-web: gunicorn RFP_website.wsgi:application --bind 0.0.0.0:$PORT
+web: python manage.py migrate && gunicorn .wsgi -b :8000
