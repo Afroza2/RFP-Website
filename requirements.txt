@@ -119,7 +119,7 @@ pylint==2.12.2
 PyMeeus==0.5.11
 pyparsing==2.4.7
 PyQt5==5.15.6
-PyQt5-Qt5==5.15.2
+# PyQt5-Qt5==5.15.2
 PyQt5-sip==12.9.1
 pyrsistent==0.18.0
 pystan==2.19.1.1
