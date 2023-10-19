@@ -3629,7 +3629,8 @@ h6 {
 .site-footer__bottom:before {
     position: absolute;
     top: 0;
-    right: -10000000000px;
+    right: 0;
+    /* right: -10000000000px; */
     left: 0;
     bottom: 0;
     content: "";
