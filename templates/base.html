@@ -37,6 +37,95 @@
     <!-- template styles -->
     <link rel="stylesheet" href="{% static 'assets/css/halpes.css' %}?20181220"/>
     <link rel="stylesheet" href="{% static 'assets/css/halpes-responsive.css' %}?20181220"/>
+    <style>
+            .row:nth-child(odd) .column-66 {
+        float: right;
+    }
+
+    /* Common styles for container sections */
+    .container-section {
+        padding: 4%;
+        margin-bottom: 4%; /* Add margin to the bottom to prevent overlapping with the next section */
+    }
+
+    /* Original styles */
+    .container {
+        margin: auto;
+        max-width: 1200px;
+        width: 90%;
+    }
+
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .column-66,
+    .column-33 {
+        float: left;
+        width: 48%;
+        padding: 2%;
+    }
+
+    .large-font {
+        font-size: 2em;
+    }
+
+    .xlarge-font {
+        font-size: 3em;
+    }
+
+    .button {
+        border: none;
+        color: white;
+        padding: 1em 2em;
+        font-size: 1em;
+        cursor: pointer;
+        background-color: #04AA6D;
+    }
+
+    img {
+        display: block;
+        height: auto;
+        max-width: 100%;
+        margin: auto;
+    }
+
+    @media screen and (max-width: 768px) {
+        .column-66,
+        .column-33 {
+            width: 100%;
+            float: none;
+        }
+
+        .row {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .column-33 {
+            order: -1;
+        }
+
+        .large-font,
+        .xlarge-font,
+        .button {
+            font-size: 1.2em;
+        }
+
+        .column-66,
+        .column-33 {
+            padding: 4%;
+            margin-bottom: 4%;
+        }
+
+        .button {
+            padding: 0.8em 1.6em;
+        }
+    }
+
+    </style>
 </head>
 <body>
 
@@ -92,25 +181,25 @@
                                 <a>Who we are</a>
                                 <ul>
                                     <li><a href="/about">About Us</a></li>
-                                    <li><a href="/vision-and-mission">Vision & Mission</a></li>
-                                    <li><a href="/strategy-and-key">Strategy and Key Points</a></li>
-                                    <li><a href="/leadership">National Leadership</a></li>
+                                    <li><a href="/">Vision & Mission</a></li>
+                                    <li><a href="/">Strategy and Key Points</a></li>
+                                    <li><a href="/">National Leadership</a></li>
                                     <li><a href="/rfp-families">RFP families</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown">
                                 <a>What we do</a>
                                 <ul>
-                                    <li><a href="/assembly">Assembly</a></li>
+                                    <li><a href="/">Assembly</a></li>
                                     <li><a href="/projects">Projects</a></li>
-                                    <li><a href="/events">Events and Dialogue</a></li>
+                                    <li><a href="/">Events and Dialogue</a></li>
                                 </ul>
                             </li>
                             <li>
                                 <a href="/news">News</a>
                             </li>
                             <li>
-                                <a href="/events">Events</a>
+                                <a href="/">Events</a>
                             </li>
                             <li class="dropdown">
                                 <a>Resources</a>
@@ -213,47 +302,26 @@
             <div class="site-footer__top">
                 <div class="row">
                     <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
-                        {#                        <div class="footer-widget__column footer-widget__about">#}
-                        {#                            <h3 class="footer-widget__title">About</h3>#}
-                        {#                            <p class="footer-widget__text">Lorem ipsum dolor sit ame consect etur pisicing elit sed#}
-                        {#                                do eiusmod tempor incididunt ut labore.</p>#}
-                        {#                            <a href="#" class="footer-widget__about-btn"><i class="fa fa-heart"></i>Donate </a>#}
-                        {#                        </div>#}
+                       
                     </div>
                     <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
                         <div class="footer-widget__column footer-widget__explore clearfix">
                             <h3 class="footer-widget__title">Explore</h3>
                             <ul class="footer-widget__explore-list list-unstyled">
 
-                                <li><a href="/leadership">National Leadership</a></li>
+                                <li><a href="/">National Leadership</a></li>
                                 <li><a href="/reports">Resources</a></li>
-                                {#                                <li><a href="https://www.flickr.com/photos/religionsforpeace/albums" target="_blank">Photo#}
-                                {#                                    Library</a></li>#}
+                               
                                 <li><a href="/contact">Contact</a></li>
                             </ul>
-                            {#                            <ul class="footer-widget__explore-list footer-widget__explore-list-two list-unstyled">#}
-                            {#                                <li><a href="#">Fundraising</a></li>#}
-                            {#                                <li><a href="#">Contact</a></li>#}
-                            {#                                <li><a href="#">Help</a></li>#}
-                            {#                                <li><a href="#">Faqs</a></li>#}
-                            {#                            </ul>#}
+                         
                         </div>
                     </div>
                     <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
                         <div class="footer-widget__column footer-widget__contact">
                             <h3 class="footer-widget__title">Contact</h3>
                             <ul class="list-unstyled footer-widget__contact-list">
-                                {#                                <li>#}
-                                {#                                    <div class="icon">#}
-                                {#                                        <i class="icon-chat"></i>#}
-                                {#                                    </div>#}
-                                {#                                    <div class="text">#}
-                                {#                                        <p>#}
-                                {#                                            <span>Call Anytime</span>#}
-                                {#                                            <a href="tel:92 666 888 0000">92 666 888 0000</a>#}
-                                {#                                        </p>#}
-                                {#                                    </div>#}
-                                {#                                </li>#}
+                              
                                 <li>
                                     <div class="icon">
                                         <i class="icon-message"></i>
@@ -276,19 +344,7 @@
                             </ul>
                         </div>
                     </div>
-                    {#                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">#}
-                    {#                        <div class="footer-widget__column footer-widget__newsletter">#}
-                    {#                            <h3 class="footer-widget__title">Newsletter</h3>#}
-                    {#                            <p class="footer-widget__newsletter-text">Lorem ipsum dolor sit ame consect etur#}
-                    {#                                pisicing elit sed do.</p>#}
-                    {#                            <form class="footer-widget__newsletter-form">#}
-                    {#                                <input type="email" placeholder="Email address" name="email">#}
-                    {#                                <button type="submit" class="footer-widget__newsletter-btn"><i#}
-                    {#                                        class="fas fa-arrow-circle-right"></i>Send#}
-                    {#                                </button>#}
-                    {#                            </form>#}
-                    {#                        </div>#}
-                    {#                    </div>#}
+
                 </div>
             </div>
             <div class="site-footer__bottom">

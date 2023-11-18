@@ -85,7 +85,6 @@ libs==0.0.10
 LunarCalendar==0.0.9
 Markdown==3.2.1
 MarkupSafe==2.0.1
-matlab==0.1
 matplotlib==3.3.4
 mccabe==0.6.1
 metakernel==0.28.2
