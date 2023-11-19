@@ -7,7 +7,7 @@
         <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
     </div><!-- /.stricky-header -->
 
-    <!--Page Header Start-->
+    <!-- Page Header Start -->
     <section class="page-header">
         <div class="page-header__bg"
              style="background-image: url('{% static "assets/images/backgrounds/page-header-bg-1-1.jpg" %}')"></div>
@@ -22,31 +22,21 @@
         </div>
     </section>
 
-    <!--Gallery page Start-->
+    <!-- Gallery page Start -->
     <section class="gallery-page">
-
         <div class="container">
-
-            <div class="row">
+            <div class="row justify-content-center">
                 {% for v in video %}
-                    <div class="col-xl-4 col-lg-6 col-md-6">
-                        <!--Gallery page Single-->
-
+                    <div class="col-lg-4 col-md-6">
+                        <!-- Gallery page Single -->
                         <div class="gallery-page__single">
-                             <embed src="{{ v.url }}" alt="" width="300" height="100%">
-{#                            <div class="gallery-page__img-box">#}
-{#                                <embed src="{{ v.url }}" alt="" width="400" >#}
-{#                                <div class="gallery-page__hover-content-box">#}
-{#                                    <h2>{{ p.p_caption }}</h2>#}
-{#                                    <p>Location</p>#}
-{#                                </div>#}
-{#                            </div>#}
+                            <embed src="{{ v.url }}" alt="" class="img-fluid">
+                            <!-- Use 'img-fluid' to make the video responsive -->
                         </div>
                     </div>
                 {% endfor %}
             </div>
         </div>
-
     </section>
-    <!--Gallery page End-->
+    <!-- Gallery page End -->
 {% endblock %}

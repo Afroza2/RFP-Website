@@ -37,95 +37,7 @@
     <!-- template styles -->
     <link rel="stylesheet" href="{% static 'assets/css/halpes.css' %}?20181220"/>
     <link rel="stylesheet" href="{% static 'assets/css/halpes-responsive.css' %}?20181220"/>
-    <style>
-            .row:nth-child(odd) .column-66 {
-        float: right;
-    }
-
-    /* Common styles for container sections */
-    .container-section {
-        padding: 4%;
-        margin-bottom: 4%; /* Add margin to the bottom to prevent overlapping with the next section */
-    }
-
-    /* Original styles */
-    .container {
-        margin: auto;
-        max-width: 1200px;
-        width: 90%;
-    }
-
-    .row:after {
-        content: "";
-        display: table;
-        clear: both;
-    }
-
-    .column-66,
-    .column-33 {
-        float: left;
-        width: 48%;
-        padding: 2%;
-    }
-
-    .large-font {
-        font-size: 2em;
-    }
-
-    .xlarge-font {
-        font-size: 3em;
-    }
-
-    .button {
-        border: none;
-        color: white;
-        padding: 1em 2em;
-        font-size: 1em;
-        cursor: pointer;
-        background-color: #04AA6D;
-    }
-
-    img {
-        display: block;
-        height: auto;
-        max-width: 100%;
-        margin: auto;
-    }
-
-    @media screen and (max-width: 768px) {
-        .column-66,
-        .column-33 {
-            width: 100%;
-            float: none;
-        }
-
-        .row {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .column-33 {
-            order: -1;
-        }
-
-        .large-font,
-        .xlarge-font,
-        .button {
-            font-size: 1.2em;
-        }
-
-        .column-66,
-        .column-33 {
-            padding: 4%;
-            margin-bottom: 4%;
-        }
-
-        .button {
-            padding: 0.8em 1.6em;
-        }
-    }
-
-    </style>
+    
 </head>
 <body>
 
@@ -198,9 +110,9 @@
                             <li>
                                 <a href="/news">News</a>
                             </li>
-                            <li>
+                            <!-- <li>
                                 <a href="/">Events</a>
-                            </li>
+                            </li> -->
                             <li class="dropdown">
                                 <a>Resources</a>
                                 <ul>
