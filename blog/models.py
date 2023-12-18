@@ -42,8 +42,22 @@ class Post(models.Model):
         return reverse('blog:details', args=[self.slug])
 
 
-class FC(models.Model):
+class NewList(models.Model):
     pass
+
+class FList(models.Model):
+    f_list = models.CharField(max_length=500, unique=True, default='former')
+    # slug = models.SlugField(max_length=300, unique_for_date='date', default='slug')
+    pdf_file = models.FileField(upload_to='pdfs/', default='pdf')
+    date = models.CharField(max_length=100, default='date')
+
+    def __str__(self):
+        return self.f_list
+
+    class Meta:
+        ordering = ('f_list',)
+
+    
 
 
 class Video(models.Model):

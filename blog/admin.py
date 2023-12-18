@@ -2,7 +2,7 @@ from django.contrib import admin
 
 # Register your models here.
 
-from .models import Post, Report, News, Member, Project, Gallery, Video
+from .models import Post, Report, News, Member, Project, Gallery, Video, FList
 
 
 # from markdownx.admin import MarkdownxModelAdmin
@@ -74,6 +74,16 @@ class NewsAdmin(admin.ModelAdmin):
 
 
 admin.site.register(News, NewsAdmin)
+
+class FCAdmin(admin.ModelAdmin):
+    list_display = ('f_list', 'date')
+    list_filter = ('f_list', 'date')
+    search_fields = ('f_list',)
+    # prepopulated_fields = {'slug': ('f_l',)}
+    ordering = ('f_list', 'date')
+
+
+admin.site.register(FList, FCAdmin)
 
 
 class MemberAdmin(admin.ModelAdmin):

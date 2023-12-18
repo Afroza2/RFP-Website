@@ -31,6 +31,7 @@ urlpatterns = [
                   path('news/', include('blog.urls', namespace='news')),
                   path('blognews/', include('blog.urls', namespace='blognews')),
                   path('contact/', include('blog.urls', namespace='contact')),
-                  path('former-committee/', include('blog.urls', namespace='committee')),
+                  path('new-committee/', include('blog.urls', namespace='new-committee')),
+                  path('former-committee/', include('blog.urls', namespace='former-committee')),
 
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

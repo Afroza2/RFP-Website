@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block container %}
+    <!-- Your existing code here -->
+
+    <section class="reports-page">
+        <div class="container">
+            <div class="row">
+                {% for f in former_committee %}
+                    <div class="col-xl-4 col-lg-6 col-md-6">
+                        <div class="events-one__single">
+                            <div class="events-one__img">
+                                <!-- PDF preview using <embed> -->
+                                <div class="pdf-preview-container">
+                                    <embed src="{{ f.pdf_file.url }}" type="application/pdf" width="100%" height="400px" />
+                                </div>
+
+                                <!-- Details and button below the PDF preview -->
+                                <div class="events-one__bottom">
+                                    <h3 class="events-one__bottom-title">
+                                        {{ f.f_list }}
+                                    </h3>
+                                     <!-- Add any additional details you want to display -->
+                                    <a href="{{ f.pdf_file.url }}" target="_blank">View PDF</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Your existing code here -->
+{% endblock %}

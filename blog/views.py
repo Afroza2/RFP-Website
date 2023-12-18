@@ -5,7 +5,7 @@ from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from django.views.generic import ListView, DetailView, TemplateView
 from django.http import Http404
-from .models import Post, Report, News, Member, Project, Gallery, About, Video, FC
+from .models import Post, Report, News, Member, Project, Gallery, About, Video, NewList, FList
 from django.db.models import Q, Count
 from django.views.generic.dates import YearArchiveView
 from taggit.models import Tag
@@ -196,11 +196,15 @@ class VideoGallery(ListView):
     template_name = 'blog/video.html'
 
 
-class FCListView(ListView):
-    model = FC
-    context_object_name = 'former_committee'
-    template_name = 'blog/fcommitte.html'
+class NewListView(ListView):
+    model = NewList
+    context_object_name = 'new_committee'
+    template_name = 'blog/newcommitte.html'
 
+class FormerListView(ListView):
+    model = FList
+    context_object_name = 'former_committee'
+    template_name = 'blog/fcommittee.html'
 
 class ProjectListView(ListView):
     model = Project

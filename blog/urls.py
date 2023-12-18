@@ -3,7 +3,7 @@ from django.urls import path, re_path
 from . import views
 from .views import Home, HomeDetail, Contact, ReportListView, ReportDetailView, NewsListView, NewsDetailView, \
     MemberListView, ProjectListView, ProjectDetailView, SearchView, ReportYearArchiveView, PhotoGallery, AboutDetail, \
-    VideoGallery, FCListView, ReportTagView, NewsTagView, NewsYearArchiveView, NewsMonths
+    VideoGallery, NewListView, ReportTagView, NewsTagView, FormerListView
 from django.views.generic.base import RedirectView
 
 # , Gallery
@@ -29,7 +29,8 @@ urlpatterns = [
     path('news/<slug:slug>/', NewsDetailView.as_view(), name='news_detail'),
     path('news/taggit/tag/<slug:tag_slug>/', NewsTagView.as_view(), name='post_tag'),
     # path('news/<int:year>/<int:month>/', NewsMonths.as_view(), name='posts-by-month'),
-    path('former-committee/', FCListView.as_view(), name='former-committee'),
+    path('new-committee/', NewListView.as_view(), name='new-committee'),
+    path('former-committee/', FormerListView.as_view(), name='former-committee'),
     path('rfp-families/', RedirectView.as_view(url='https://www.rfp.org/where-we-work/')),
     # path('blognews/', HomeNewsList.as_view(), name='home_news_list'),
     # path('blognews/<slug:slug>/', HomeNewsDetailsView.as_view(), name='home_news_detail'),

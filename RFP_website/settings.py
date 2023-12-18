@@ -26,13 +26,16 @@ DEBUG = True
 
 #ALLOWED_HOST = ['*']
 ALLOWED_HOSTS = ['https://rfpbangladesh.org', '3.108.148.207', 'localhost', '127.0.0.1','rfpbangladesh.org',]
-
+CSRF_TRUSTED_ORIGINS = ['https://rfpbangladesh.org']
 # Application definition
 
 
 #Admin
 #rfp#222
 
+# settings.py
+
+X_FRAME_OPTIONS = 'ALLOWALL'
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -134,7 +137,7 @@ import os
 STATIC_URL = '/static/'
 # STATICFILES_DIRS = [BASE_DIR / "static"]
 # STATIC_ROOT = BASE_DIR / "staticfiles"
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT =os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage"  # new
