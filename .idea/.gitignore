@@ -13,7 +13,7 @@
 *.pyc
 __pycache__
 db.sqlite3
-media
+# media
 
 blog/__pycache__/
 blog/migrations/__pycache__/
