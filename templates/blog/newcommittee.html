@@ -1,0 +1,164 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block container %}
+<style>
+    .committee-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    .committee-card {
+        padding-top: 20px; /* Adjust as needed */
+        width: 70%;
+    
+        margin-bottom: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+        box-sizing: border-box;
+        cursor: pointer;
+    }
+
+    .committee-card:hover {
+        background-color: #f0f0f0;
+    }
+
+    .committee-details {
+        padding: 20px; /* Adjust padding as needed */
+        background-color: #f8f9fa;
+    }
+
+    .committee-title {
+        margin-top: 50px;
+        margin: 0;
+        font-weight: bold;
+    }
+
+    .committee-position {
+        font-style: italic;
+        margin-bottom: 5px;
+        color: black;
+        position: relative;
+        top: -30px; /* Adjust the value as needed */
+    }
+
+    .committee-faith {
+        margin: 0;
+    }
+
+    .section-heading {
+        width: 100%;
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
+    @media screen and (max-width: 768px) {
+        .committee-card {
+            width: 100%;
+        }
+    }
+
+    .container {
+        padding: 64px;
+    }
+
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .column-66 {
+        float: left;
+        width: 66.66666%;
+        padding: 20px;
+    }
+
+    .column-33 {
+        float: left;
+        width: 33.33333%;
+        padding: 20px;
+        margin-top: 35px;
+    }
+
+    @media screen and (max-width: 1000px) {
+        .committee-card {
+            width: 100%;
+        }
+    }
+</style>
+
+
+
+<div class="stricky-header stricked-menu main-menu">
+    <div class="sticky-header__content"></div>
+</div>
+
+<!-- Page Header Start -->
+<section class="page-header">
+    <img class="page-header__bg" src="{% static 'assets/images/backgrounds/page-header-bg-1-1.jpg' %}" alt="">
+    <div class="container">
+        <h2>Current Committee</h2>
+        <ul class="thm-breadcrumb list-unstyled">
+            <li><a href="/">Home</a></li>
+            <li class="color-thm-gray">/</li>
+            <li><span>Current Committee</span></li>
+        </ul>
+    </div>
+</section>
+
+
+
+<!-- Committee Section Start -->
+<section class="committee-section">
+
+    <div class="container">
+        {% for member in members %}
+        {% if member.order|divisibleby:2 %}
+            <div class="row">
+                <div class="column-66">
+                    <div class="committee-card">
+                        <div class="committee-details">
+                            {% if member.mem_name %}
+                            <h3 class="committee-title">{{ member.mem_name }}</h3>
+                            {% endif %}
+                            {% if member.faith %}
+                            <p class="committee-faith">{{ member.faith }}</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <div class="column-33">
+                    {% if member.position %}
+                    <p class="committee-position">{{ member.position }}</p>
+                    {% endif %}
+                </div>
+            </div>
+        {% else %}
+            <div class="row">
+                <div class="column-33">
+                    {% if member.position %}
+                    <p class="committee-position">{{ member.position }}</p>
+                    {% endif %}
+                </div>
+                <div class="column-66">
+                    <div class="committee-card">
+                        <div class="committee-details">
+                            {% if member.mem_name %}
+                            <h3 class="committee-title">{{ member.mem_name }}</h3>
+                            {% endif %}
+                            {% if member.faith %}
+                            <p class="committee-faith">{{ member.faith }}</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+        {% endfor %}
+    </div>
+
+</section>
+{% endblock %}

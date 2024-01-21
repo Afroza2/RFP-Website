@@ -43,7 +43,16 @@ class Post(models.Model):
 
 
 class NewList(models.Model):
-    pass
+    mem_name = models.CharField(max_length=500, unique=True, default='new', blank=True)
+    position = models.CharField(max_length=500, default='position')
+    order = models.IntegerField(default=0) 
+    faith = models.CharField(max_length=50,  default='faith',blank=True)
+
+    def __str__(self):
+        return self.mem_name
+
+    class Meta:
+        ordering = ['order', 'position']
 
 class FList(models.Model):
     f_list = models.CharField(max_length=500, unique=True, default='former')
@@ -67,9 +76,11 @@ class Video(models.Model):
 
 class Report(models.Model):
     rp_title = models.CharField(max_length=500)
-    slug = models.SlugField(max_length=300, unique_for_date='date')
-    url = models.URLField(max_length=500)
-    date = models.DateTimeField(default=timezone.now)
+    pdf_file = models.FileField(upload_to='pdfs/', default='pdf')
+    # date = models.CharField(max_length=100, default='date')
+    # slug = models.SlugField(max_length=300, unique_for_date='date')
+    # url = models.URLField(max_length=500)
+    date = models.DateTimeField(default=None)
     tags = TaggableManager()
 
     # rp_body = models.TextField()
@@ -81,7 +92,7 @@ class Report(models.Model):
         ordering = ('rp_title',)
 
     def get_absolute_url(self):
-        return reverse('report:report_detail', args=[self.slug])
+        return reverse('report:report_detail')
 
 
 #

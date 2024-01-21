@@ -36,7 +36,14 @@
 
     .report-viewer {
         width: 100%;
-        height: 300px; /* Adjust height as needed */
+        /* height: 300px; Adjust height as needed */
+        /* height: auto; */
+        overflow: hidden;
+    }
+
+    .report-viewer embed {
+        width: 100%;
+        height: 80vh;
     }
 
     .report-info {
@@ -51,7 +58,15 @@
     .report-tags {
         display: flex;
         flex-wrap: wrap;
+        justify-content: center;
     }
+
+    .report-tags a {
+        margin-right: 10px;
+        margin-bottom: 10px;
+        margin-top: 10px;
+    }
+
 
     .report-tags a {
         margin-right: 10px;
@@ -106,19 +121,21 @@
                     <div class="report-card">
                         <div class="report-viewer">
                             <!-- Embed PDF viewer here -->
-                            <embed src="{{ report.url }}" width="100%" height="100%" type="application/pdf">
+                            <embed src="{{ report.pdf_file.url }}" width="100%" height="100%" type="application/pdf"/>
                         </div>
                         <div class="report-info">
+                            <a href="{{ report.pdf_file.url }}" class="btn" target="_blank">
                             <h3 class="report-title">{{ report.rp_title }}</h3>
+                          </a>
+                        </div>
+                        
                             <div class="report-tags">
                                 {% for tag in report.tags.all %}
-                                    <a href="{% url 'blog:report_tag' tag.slug %}"
-                                    class="link-light text-decoration-none badge bg-secondary">
-                                        {{ tag.name }}
-                                    </a>
-                                {% endfor %}
-                            </div>
-                        </div>
+                                <a href="{% url 'blog:report_tag' tag.slug %}" class="link-light text-decoration-none badge bg-secondary">
+                                    {{ tag.name }}
+                                </a>
+                                {% endfor %}</div>
+                        
                     </div>
                 {% endif %}
             {% endfor %}

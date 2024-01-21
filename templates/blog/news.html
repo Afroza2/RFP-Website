@@ -26,9 +26,9 @@
 {#        {% endif %}#}
         <div class="container">
             <div>
-                {% for tag in news_tags %}
+                <!-- {% for tag in news_tags %}
                     <a href="{% url 'blog:post_tag' tag.slug %}">{{ tag.name }}</a>
-                {% endfor %}
+                {% endfor %} -->
             </div>
             <div class="row">
                 {% for news in newss %}
@@ -67,13 +67,13 @@
                             <div class="sidebar__single sidebar__tags">
                                 <h3 class="sidebar__title">Tags</h3>
                                 <div class="sidebar__tags-list">
-                                    {% for tag in news.tags.all %}
+                                    <!-- {% for tag in news.tags.all %}
                                         <a href="{% url 'blog:post_tag' tag.slug %}"
                                            class="link-light text-decoration-none badge bg-secondary">
                                             {{ tag }}
-                                        </a>
+                                        </a> -->
                                         <!-- {% if not forloop.last %}, {% endif %} -->
-                                    {% endfor %}
+                                    <!-- {% endfor %} -->
                                 </div>
                             </div>
                         </div>

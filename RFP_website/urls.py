@@ -1,37 +1,21 @@
-"""RFP_website URL Configuration
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/3.2/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
+# RFP_website/urls.py
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
-                  path('admin/', admin.site.urls),
-                  path('', include('blog.urls', namespace='blog')),
-                  # path('markdownx/', include('markdownx.urls')),
-                  path('ckeditor/', include('ckeditor_uploader.urls')),
-
-                  path('projects/', include('blog.urls', namespace='project')),
-                  path('photo-gallery/', include('blog.urls', namespace='gallery')),
-                  path('video-gallery/', include('blog.urls', namespace='video')),
-                  path('reports/', include('blog.urls', namespace='report')),
-                  path('members/', include('blog.urls', namespace='members')),
-                  path('news/', include('blog.urls', namespace='news')),
-                  path('blognews/', include('blog.urls', namespace='blognews')),
-                  path('contact/', include('blog.urls', namespace='contact')),
-                  path('new-committee/', include('blog.urls', namespace='new-committee')),
-                  path('former-committee/', include('blog.urls', namespace='former-committee')),
-
-              ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    path('admin/', admin.site.urls),
+    path('', include('blog.urls', namespace='blog')),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
+    path('projects/', include('blog.urls', namespace='project')),
+    path('photo-gallery/', include('blog.urls', namespace='gallery')),
+    path('video-gallery/', include('blog.urls', namespace='video')),
+    path('reports/', include('blog.urls', namespace='report')),
+    path('members/', include('blog.urls', namespace='members')),
+    path('news/', include('blog.urls', namespace='news')),
+    # path('blognews/', include('blog.urls', namespace='blognews')),
+    path('contact/', include('blog.urls', namespace='contact')),
+    path('new-committee/', include('blog.urls', namespace='new_committee')),
+    path('former-committee/', include('blog.urls', namespace='former_committee')),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

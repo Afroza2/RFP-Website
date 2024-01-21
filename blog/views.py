@@ -7,8 +7,9 @@ from django.views.generic import ListView, DetailView, TemplateView
 from django.http import Http404
 from .models import Post, Report, News, Member, Project, Gallery, About, Video, NewList, FList
 from django.db.models import Q, Count
-from django.views.generic.dates import YearArchiveView
 from taggit.models import Tag
+from django.views.generic.dates import YearArchiveView
+
 
 
 # , Report, Gallery
@@ -153,11 +154,12 @@ class ReportTagView(ListView):
         # return Report.objects.filter(tags__name__in=[self.kwargs['tag']])
 
 
-class ReportYearArchiveView(YearArchiveView):
-    queryset = Report.objects.all()
-    date_field = "pub_date"
-    make_object_list = True
-    allow_future = True
+# class ArchiveYearView(YearArchiveView):
+#     model = Report
+#     template_name = 'blog/archive_year.html'
+#     context_object_name = 'archive_list'
+#     make_object_list = True
+#     allow_future = True
 
 
 #     # def get_object(self, queryset=None):
@@ -196,10 +198,41 @@ class VideoGallery(ListView):
     template_name = 'blog/video.html'
 
 
+# class NewListView(ListView):
+#     model = NewList
+#     template_name = 'blog/newcommittee.html'
+
+#     context_object_name = 'members'
+
+#     # def get_queryset(self):
+
+#     #     queryset = NewList.objects.order_by('order','position')
+#     #     print(queryset)  # Add this line to check the queryset in the console
+#     #     return queryset
+    
 class NewListView(ListView):
     model = NewList
-    context_object_name = 'new_committee'
-    template_name = 'blog/newcommitte.html'
+    template_name = 'blog/newcommittee.html'
+    context_object_name = 'members'
+
+    # def get_context_data(self, **kwargs):
+    #     context = super().get_context_data(**kwargs)
+        
+    #     # Define custom order of positions
+    #     position_order = [
+    #         "President", "Vice President", "General Secretary", "Joint Secretary",
+    #         "Assistant Secretary", "Treasurer", "Organizing Secretary", "Office Secretary",
+    #         "Media and Communications Secretary", "Secretary of Child Education and Protection",
+    #         "Human Resource Development", "Secretary", "Hill-tracks and Tribal Affairs Secretary",
+    #         "Women's Affairs Secretary", "Executive", "Members"
+    #     ]
+
+    #     context['position_order'] = position_order
+    #     return context
+
+    def get_queryset(self):
+        return NewList.objects.order_by('order')
+   
 
 class FormerListView(ListView):
     model = FList

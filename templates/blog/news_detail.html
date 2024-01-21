@@ -33,7 +33,7 @@
                         </div>
                         <div class="news-details__bottom">
 
-                            <p class="news-details__tags">
+                            <!-- <p class="news-details__tags">
                                 <span>Tags:</span>
                                 {% for tag in news.tags.all %}
                                     <a href="{% url 'blog:post_tag' tag.slug %}"
@@ -41,8 +41,8 @@
                                         {{ tag.name }}
                                     </a>
                                     <!-- {% if not forloop.last %}, {% endif %} -->
-                                {% endfor %}
-                            </p>
+                                <!-- {% endfor %} -->
+                            <!-- </p> --> -->
                         </div>
                     </div>
                 </div>
@@ -82,11 +82,11 @@
                         <div class="sidebar__single sidebar__tags">
                             <h3 class="sidebar__title">Popular Tags</h3>
 
-                            <div class="sidebar__tags-list">
+                            <!-- <div class="sidebar__tags-list">
                                 {% for tag in tags %}
                                 <a href="{% url 'blog:post_tag'  tag.slug %} ">{{ tag.name }}</a>
                                {% endfor %}
-                            </div>
+                            </div> -->
                         </div>
                     </div>
                 </div>

@@ -1,0 +1,13 @@
+<!-- blog/templates/blog/archive_year.html -->
+
+{% extends 'base.html' %}
+
+{% block container %}
+    <h2>Archive for {{ year }}</h2>
+    <ul>
+        {% for report in archive_list %}
+            <li>{{ report.rp_title }}</li>
+            <!-- Add more details or customize as needed -->
+        {% endfor %}
+    </ul>
+{% endblock %}
