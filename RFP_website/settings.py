@@ -24,8 +24,8 @@ SECRET_KEY = 'django-insecure-%7+4=7n_zp4fc=h!*!vu--ve^9wx=iv$u8l%kn_bl9)e27kix*
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-#ALLOWED_HOST = ['*']
-ALLOWED_HOSTS = ['https://rfpbangladesh.org', '3.108.148.207', 'localhost', '127.0.0.1','rfpbangladesh.org',]
+ALLOWED_HOSTS = ['*']
+# ALLOWED_HOSTS = ['https://rfpbangladesh.org', '3.108.148.207', 'localhost', '127.0.0.1','rfpbangladesh.org',]
 CSRF_TRUSTED_ORIGINS = ['https://rfpbangladesh.org']
 # Application definition
 
@@ -57,6 +57,7 @@ TAGGIT_CASE_INSENSITIVE = True
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -79,6 +80,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'blog.context_processors.site_info',
             ],
         },
     },
@@ -140,7 +142,8 @@ STATIC_URL = '/static/'
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT =os.path.join(BASE_DIR, 'staticfiles')
-STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage"  # new
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE = "django.contrib.staticfiles.storage.StaticFilesStorage"  # new
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
