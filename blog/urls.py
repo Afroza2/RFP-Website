@@ -25,7 +25,7 @@ urlpatterns = [
     # path('archive/<int:year>/', ArchiveYearView.as_view(), name='archive_year'),
     path('news/', NewsListView.as_view(), name='news_list'),
     path('news/<slug:slug>/', NewsDetailView.as_view(), name='news_detail'),
-    path('news/taggit/tag/<slug:tag_slug>/', NewsTagView.as_view(), name='news_tag'),
+    path('news/taggit/tag/<slug:tag_slug>/', NewsTagView.as_view(), name='post_tag'),
     path('new-committee/', NewListView.as_view(), name='new_committee'),
     path('former-committee/', FormerListView.as_view(), name='former_committee'),
     path('rfp-families/', RedirectView.as_view(url='https://www.rfp.org/where-we-work/'), name='rfp_families'),
