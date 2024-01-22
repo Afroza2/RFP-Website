@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-%7+4=7n_zp4fc=h!*!vu--ve^9wx=iv$u8l%kn_bl9)e27kix*'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 # ALLOWED_HOSTS = ['https://rfpbangladesh.org', '3.108.148.207', 'localhost', '127.0.0.1','rfpbangladesh.org',]
